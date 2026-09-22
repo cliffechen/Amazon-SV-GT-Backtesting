@@ -1,0 +1,9 @@
+{
+  "period": "YYYY-MM",
+  "screenshot_available": 0,
+  "account_reserve": 0,
+  "project_limit": 120,
+  "per_minute": 30,
+  "source": "Replace with your own verified current-period allowance before paid collection",
+  "rollover_allowed": false
+}

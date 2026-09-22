@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "searched_at": "2026-09-23",
+  "window_requested": {
+    "start": "2026-06-23",
+    "end": "2026-09-23"
+  },
+  "coverage_note": "首批人工核验以尿石素 A / Timeline 为重点，补充肌酸与南非醉茄。当前收录均涉及美国；加拿大与墨西哥仍未完成系统检索，其他成分空白不代表没有新闻。品牌官网和公司新闻稿与独立媒体明确区分；同一诉讼事件去重。",
+  "items": [
+    {
+      "region": "US",
+      "evidence": "verified_secondary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-us-judgment-2026",
+      "ingredient_ids": [
+        "urolithin-a"
+      ],
+      "ingredient_keywords": [
+        "urolithin a"
+      ],
+      "title": "美国行业媒体报道：Timeline 获尿石素 A 假标产品诉讼判决",
+      "url": "https://bostonlifesciencestimes.com/2026/07/federal-court-bans-19-sellers-of-fake-urolithin-a-supplements-awards-timeline-5-3-million/",
+      "source": "Boston Life Sciences Times",
+      "published_at": "2026-07-23",
+      "event_at": "2026-07-15",
+      "summary": "该媒体报道，马萨诸塞联邦法院对 19 家未应诉卖家作出缺席判决和禁令，判赔总额超过 530 万美元。属于质量与竞争环境事件，不能据此推断消费者需求上升。",
+      "category": "行业媒体·质量与市场",
+      "brands": [
+        "Timeline"
+      ],
+      "source_kind": "independent_media",
+      "event_id": "timeline-ma-default-judgment-2026-07-15",
+      "date_evidence": "文章署期为 July 23, 2026；正文明确法院命令于 July 15 生效。",
+      "region_evidence": "正文指向美国马萨诸塞联邦地区法院与美国子公司 Timeline Longevity, Inc.。",
+      "relevance_note": "正文直接提及 Urolithin A 和 Timeline；报道主要依据公司声明，不等于本项目独立审阅全部法院卷宗。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-authenticity-2026-08-13",
+      "ingredient_ids": [
+        "urolithin-a"
+      ],
+      "ingredient_keywords": [
+        "urolithin a"
+      ],
+      "title": "Timeline 发布尿石素 A 真伪识别品牌内容",
+      "url": "https://www.timeline.com/blog/fake-urolithin-a-supplements-how-to-spot-the-real-thing",
+      "source": "Timeline 官网（品牌内容）",
+      "published_at": "2026-08-13",
+      "event_at": "2026-07-15",
+      "summary": "Timeline 用此前美国诉讼事件开展产品真伪教育并推广 Mitopure。此为品牌营销和消费者教育内容；与 7 月诉讼报道合并展示，不重复计算事件。",
+      "category": "品牌教育·含营销",
+      "brands": [
+        "Timeline"
+      ],
+      "source_kind": "brand_education",
+      "event_id": "timeline-ma-default-judgment-2026-07-15",
+      "date_evidence": "文章标题上方明确 Aug 13, 2026；其讨论的法院事件为 7 月 15 日。",
+      "region_evidence": "官网美国站（US），正文直接讨论美国法院与销售市场。",
+      "relevance_note": "正文直接关联尿石素 A 与 Mitopure 商标；品牌临床和排他性宣传不作为本项目已验证的医学结论。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-long-story-short-2026-09-07",
+      "ingredient_ids": [
+        "urolithin-a"
+      ],
+      "ingredient_keywords": [
+        "urolithin a"
+      ],
+      "title": "Timeline 推出 Long Story Short 人物系列",
+      "url": "https://www.timeline.com/blog/long-story-short-five-lives-redefining-the-spirit-of-aging",
+      "source": "Timeline 官网（品牌内容）",
+      "published_at": "2026-09-07",
+      "summary": "品牌刊出五位 58–79 岁人物的生活故事，围绕衰老与活力展开内容传播，并链接 Instagram 访谈。这是可观察的品牌传播活动，未提供曝光、销量或成分效果数据。",
+      "category": "品牌传播·含营销",
+      "brands": [
+        "Timeline"
+      ],
+      "source_kind": "brand_announcement",
+      "date_evidence": "文章标题上方明确 Sep 07, 2026。",
+      "region_evidence": "官网美国站；人物故事明确涉及纽约、布鲁克林、新英格兰与北卡罗来纳。",
+      "relevance_note": "通过 Timeline 品牌关联尿石素 A；关联强度为品牌层面，文章本身不证明尿石素 A 需求变化。",
+      "association_type": "brand_context"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-ua-creatine-2026-07-10",
+      "ingredient_ids": [
+        "urolithin-a",
+        "creatine"
+      ],
+      "ingredient_keywords": [
+        "urolithin a",
+        "creatine"
+      ],
+      "title": "Timeline 发布尿石素 A 与肌酸对比教育文章",
+      "url": "https://www.timeline.com/blog/urolithin-a-vs-creatine-which-supports-muscle-and-how",
+      "source": "Timeline 官网（品牌内容）",
+      "published_at": "2026-07-10",
+      "summary": "文章将尿石素 A 与肌酸放在肌肉和健康衰老场景中比较，并推广 Mitopure 产品。可用于观察品牌定位与关键词交叉教育，不代表新临床试验或独立疗效评价。",
+      "category": "品牌教育·含营销",
+      "brands": [
+        "Timeline"
+      ],
+      "source_kind": "brand_education",
+      "date_evidence": "文章主标题上方明确 Jul 10, 2026，而非页首其他推荐文章日期。",
+      "region_evidence": "官网选择 US，页面底部标为 United States，面向美国消费者。",
+      "relevance_note": "标题与正文直接出现两种成分。品牌的优劣及功效表述仅记录为营销叙事。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-centenarians-2026-06-23",
+      "ingredient_ids": [
+        "urolithin-a"
+      ],
+      "ingredient_keywords": [
+        "urolithin a"
+      ],
+      "title": "Timeline 将免疫衰老研究纳入 Mitopure 内容传播",
+      "url": "https://www.timeline.com/blog/what-centenarians-reveal-about-longevity-and-immune-health",
+      "source": "Timeline 官网（品牌内容）",
+      "published_at": "2026-06-23",
+      "summary": "品牌讨论百岁老人免疫相关研究，并在文章中介绍 Mitopure。此记录反映品牌在免疫衰老主题上的教育活动，不能把文章发布日期当成文中旧研究的发表日期。",
+      "category": "品牌教育·含营销",
+      "brands": [
+        "Timeline"
+      ],
+      "source_kind": "brand_education",
+      "date_evidence": "主标题上方日期 Jun 23, 2026，恰为本次三日历月窗口首日。",
+      "region_evidence": "面向 United States 的官网 US 站页面；研究背景本身含瑞士材料，区域归属基于美国市场品牌传播而非试验地点。",
+      "relevance_note": "文中有专门的 Mitopure/尿石素 A 段落。涉及已发表研究的品牌解读，不是独立新闻或新疗效结论。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "doctors-best-creatine-2026-07-08",
+      "ingredient_ids": [
+        "creatine"
+      ],
+      "ingredient_keywords": [
+        "creatine"
+      ],
+      "title": "Doctor's Best 宣布新增肌酸粉及镁粉",
+      "url": "https://www.prnewswire.com/news-releases/doctors-best-adds-new-magnesium-and-creatine-powders-to-product-line-302821005.html",
+      "source": "Doctor's Best / PR Newswire（公司新闻稿）",
+      "published_at": "2026-07-08",
+      "summary": "公司宣布推出微粉化一水肌酸粉与草莓青柠味镁粉，并称已在部分零售商及线上渠道销售。新闻稿可证明品牌发布了新品信息，不能证明销量增长。",
+      "category": "新品发布·公司新闻稿",
+      "brands": [
+        "Doctor's Best"
+      ],
+      "source_kind": "brand_announcement",
+      "date_evidence": "PR Newswire 标明 Jul 08, 2026, 12:43 ET；正文 dateline 同日。",
+      "region_evidence": "正文 dateline 为 Tustin, California，描述美国品牌销售渠道。",
+      "relevance_note": "新品明确为 creatine monohydrate；不自动关联所有镁类成分，避免不同盐型混淆。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "kreatures-creatine-sprouts-2026-07-08",
+      "ingredient_ids": [
+        "creatine"
+      ],
+      "ingredient_keywords": [
+        "creatine"
+      ],
+      "title": "Kreatures of Habit 宣布含肌酸 DAILY BAR 进入 Sprouts",
+      "url": "https://www.prnewswire.com/news-releases/kreatures-of-habit-brings-cult-favorite-daily-bar-to-retail-for-the-first-time-launching-nationwide-at-sprouts-farmers-market-302820345.html",
+      "source": "Kreatures of Habit / PR Newswire（公司新闻稿）",
+      "published_at": "2026-07-08",
+      "summary": "品牌宣布含一水肌酸的蛋白棒全国进入 Sprouts Farmers Market，并配合多州活动与产品试吃。反映成分向食品形态及线下渠道延伸；尚无独立销售验证。",
+      "category": "渠道扩张·公司新闻稿",
+      "brands": [
+        "Kreatures of Habit"
+      ],
+      "source_kind": "brand_announcement",
+      "date_evidence": "PR Newswire 标明 Jul 08, 2026, 08:42 ET；正文 dateline 同日。",
+      "region_evidence": "纽约 dateline；正文列美国加州、内华达、亚利桑那、犹他、科罗拉多、佛罗里达的活动。",
+      "relevance_note": "产品明确标示 creatine monohydrate；来自公司自述，非独立需求指标。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "omniactive-zenroot-2026-08-10",
+      "ingredient_ids": [
+        "ashwagandha"
+      ],
+      "ingredient_keywords": [
+        "ashwagandha"
+      ],
+      "title": "OmniActive 宣布 Zenroot 南非醉茄原料通过 USP 验证",
+      "url": "https://omniactives.com/press-releases/zenroot-root-only-ashwagandha-extract-now-usp-verified/",
+      "source": "OmniActive 官网（公司新闻稿）",
+      "published_at": "2026-08-10",
+      "summary": "公司宣布其 Zenroot 根部南非醉茄提取物加入 USP 原料验证项目。公告明确，USP 该项目评估制造与质量，不评估临床研究有效性。",
+      "category": "原料与质量·公司新闻稿",
+      "brands": [
+        "OmniActive"
+      ],
+      "source_kind": "brand_announcement",
+      "date_evidence": "正文 dateline 明确 AUGUST 10, 2026。",
+      "region_evidence": "公告同时发布于 Bridgewater, New Jersey 与印度，且直接涉及美国药典 USP 验证项目。",
+      "relevance_note": "正文明确 ashwagandha/Zenroot；商标 Zenroot 是原料产品，不与公司品牌混同。"
+    },
+    {
+      "region": "US",
+      "evidence": "verified_primary",
+      "retrieved_at": "2026-09-23",
+      "verification_note": "2026-09-23 通过 web search 发现并逐页 open 核验；记录发布页的日期与正文，不采用搜索抓取日期。",
+      "model_feature": false,
+      "id": "timeline-lancome-background-2026-02-19",
+      "ingredient_ids": [
+        "urolithin-a"
+      ],
+      "ingredient_keywords": [
+        "urolithin a"
+      ],
+      "title": "背景：Timeline 与 Lancôme 的 Mitopure 合作公告",
+      "url": "https://www.timeline.com/blog/timeline-s-mitopure-r-technology-is-launching-globally",
+      "source": "Timeline 官网（公司公告）",
+      "published_at": "2026-02-19",
+      "event_at": "2026-02-13",
+      "summary": "品牌介绍与 Lancôme 的 Mitopure 护肤合作，并预告在丹佛 AAD 大会揭幕。文章在本次新闻窗口之外，仅作为品牌历史背景。",
+      "category": "历史背景·品牌合作",
+      "brands": [
+        "Timeline",
+        "Lancôme"
+      ],
+      "source_kind": "brand_announcement",
+      "date_evidence": "网页发布日期 Feb 19, 2026；正文新闻稿 dateline 为 February 13th, 2026，分别保留。",
+      "region_evidence": "公告正文明确美国科罗拉多州 Denver 的 AAD 大会安排。",
+      "relevance_note": "正文说明 Mitopure 为尿石素 A，并用于护肤场景；不能直接外推至 Amazon 膳食补充剂需求。"
+    }
+  ]
+}

@@ -1,0 +1,2426 @@
+﻿{
+    "meta":  {
+                 "title":  "North America Promising Supplement Ingredients",
+                 "description":  "Comprehensive database of promising and emerging supplement ingredients in the North American market, organized by health benefit categories",
+                 "lastUpdated":  "2026-04-29",
+                 "dataSources":  [
+                                     "SPINS 2024 Top25 Ingredient Rankings",
+                                     "NBJ (Nutrition Business Journal)",
+                                     "Mordor Intelligence",
+                                     "Fact.MR",
+                                     "Market Reports World",
+                                     "NutraIngredients-USA",
+                                     "Pubmed / JAMA clinical studies",
+                                     "新营养 (xinyingyang.com)",
+                                     "植提桥 (Herbridge)",
+                                     "FBIF食品饮料创新",
+                                     "TikTok Shop / Amazon trending data"
+                                 ],
+                 "marketOverview":  {
+                                        "globalSupplementMarket2025":  "~$250 billion USD",
+                                        "northAmericaMarket2022":  "$50.91 billion USD",
+                                        "northAmericaCAGR":  "7-8% (2023-2030)",
+                                        "naturalVsConventionalGrowth":  "+6.6% vs -1.1%",
+                                        "keyGrowthDrivers":  [
+                                                                 "Aging population (US 65+ from 58M to 82M by 2050)",
+                                                                 "GLP-1 drug awareness driving natural alternatives",
+                                                                 "Cognitive health expanding beyond elderly to all ages",
+                                                                 "Personalized nutrition and precision supplementation",
+                                                                 "Social media (TikTok) accelerating ingredient virality"
+                                                             ]
+                                    }
+             },
+    "categories":  [
+                       {
+                           "id":  "anti_aging_longevity",
+                           "name":  "抗衰老与长寿 (Anti-Aging \u0026 Longevity)",
+                           "description":  "Cellular health, NAD+ pathway, senolytics, autophagy, and epigenetic modulation",
+                           "marketNote":  "Core driver of US supplement market growth; anti-aging is shifting from cosmetic to cellular-level intervention",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "NMN (Nicotinamide Mononucleotide)",
+                                                   "nameCN":  "烟酰胺单核苷酸",
+                                                   "category":  "NAD+ precursor",
+                                                   "marketSize2025":  "~$409M globally",
+                                                   "projectedCAGR":  "~12% to 2034 ($1.31B)",
+                                                   "trend":  "FDA解除限制后北美市场加速；NMNH(还原型)为下一代升级",
+                                                   "mechanism":  "NAD+前体，支持细胞能量代谢、DNA修复、SIRT1激活",
+                                                   "keyBrands":  [
+                                                                     "Elysium (Basis)",
+                                                                     "ProHealth Longevity",
+                                                                     "Alive By Nature"
+                                                                 ],
+                                                   "source":  "Market Reports World 2026"
+                                               },
+                                               {
+                                                   "name":  "NR (Nicotinamide Riboside)",
+                                                   "nameCN":  "烟酰胺核糖",
+                                                   "category":  "NAD+ precursor",
+                                                   "mechanism":  "NAD+前体，通过NRK途径转化为NAD+",
+                                                   "keyBrands":  [
+                                                                     "Tru Niagen (ChromaDex)",
+                                                                     "Thorne (NiaCel)"
+                                                                 ],
+                                                   "note":  "成熟品类，与NMN竞争，ChromaDex专利壁垒"
+                                               },
+                                               {
+                                                   "name":  "NMNH (Reduced Nicotinamide Mononucleotide)",
+                                                   "nameCN":  "还原型烟酰胺单核苷酸",
+                                                   "category":  "NAD+ precursor",
+                                                   "trend":  "NAD+新一代前体，比NMN吸收更快更持久",
+                                                   "mechanism":  "还原型NAD+前体，绕过NAMPT限速步骤",
+                                                   "note":  "2025年抗衰市场技术革新焦点"
+                                               },
+                                               {
+                                                   "name":  "Urolithin A",
+                                                   "nameCN":  "尿石素A",
+                                                   "category":  "Mitophagy activator",
+                                                   "trend":  "线粒体自噬激活剂，临床支持肌肉功能改善",
+                                                   "mechanism":  "肠道菌群代谢鞣花酸产生，激活线粒体自噬(PINK1/Parkin通路)",
+                                                   "keyBrands":  [
+                                                                     "Mitopure (Timeline/Amazentis)"
+                                                                 ],
+                                                   "source":  "Pubmed 2025"
+                                               },
+                                               {
+                                                   "name":  "Spermidine",
+                                                   "nameCN":  "亚精胺",
+                                                   "category":  "Autophagy inducer",
+                                                   "trend":  "细胞自噬诱导，抗衰老新星，论文量快速增长",
+                                                   "mechanism":  "诱导细胞自噬，表观遗传调控(组蛋白乙酰化)",
+                                                   "keyBrands":  [
+                                                                     "SpermidineLIFE"
+                                                                 ],
+                                                   "source":  "Pubmed 2025"
+                                               },
+                                               {
+                                                   "name":  "CaAKG (Calcium Alpha-Ketoglutarate)",
+                                                   "nameCN":  "α-酮戊二酸钙",
+                                                   "category":  "Epigenetic modulator",
+                                                   "trend":  "延寿研究(Buck Institute)推进中",
+                                                   "mechanism":  "表观遗传调控，TET酶辅助因子，抑制mTOR",
+                                                   "keyBrands":  [
+                                                                     "Rejuvant (Ponce de Leon Health)"
+                                                                 ],
+                                                   "source":  "Buck Institute research"
+                                               },
+                                               {
+                                                   "name":  "Fisetin",
+                                                   "nameCN":  "非瑟酮",
+                                                   "category":  "Senolytic",
+                                                   "trend":  "衰老细胞清除剂，与槲皮素同类但选择性更强",
+                                                   "mechanism":  "选择性清除衰老细胞(senolytic)，抗氧化，抗炎",
+                                                   "source":  "Mayo Clinic AFFIRMATIVE trial"
+                                               },
+                                               {
+                                                   "name":  "Quercetin",
+                                                   "nameCN":  "槲皮素",
+                                                   "category":  "Senolytic / Antioxidant",
+                                                   "salesUSD":  "$130M (SPINS 2024)",
+                                                   "mechanism":  "衰老细胞清除，抗氧化，抗炎，免疫调节",
+                                                   "trend":  "常与非瑟酮或白藜芦醇联用的抗衰配方基础成分"
+                                               },
+                                               {
+                                                   "name":  "Trans-Resveratrol",
+                                                   "nameCN":  "反式白藜芦醇",
+                                                   "category":  "SIRT1 activator",
+                                                   "mechanism":  "SIRT1去乙酰化酶激活，抗氧化",
+                                                   "note":  "经典长寿成分，NAD+配方常见搭档，生物利用度是关键挑战"
+                                               },
+                                               {
+                                                   "name":  "Pterostilbene",
+                                                   "nameCN":  "紫檀芪",
+                                                   "category":  "SIRT1 activator",
+                                                   "trend":  "白藜芦醇的高生物利用度替代品",
+                                                   "mechanism":  "SIRT1激活，比白藜芦醇吸收率高4-8倍",
+                                                   "note":  "蓝莓天然成分，抗氧化+认知健康双赛道"
+                                               },
+                                               {
+                                                   "name":  "Vitamin K2 (MK-7)",
+                                                   "nameCN":  "维生素K2",
+                                                   "category":  "Antioxidant / Bone",
+                                                   "growth":  "+47% YoY (SPINS 2024)",
+                                                   "mechanism":  "γ-谷氨酰羧化酶辅助因子，抗氧化潜力是维E的10-100倍",
+                                                   "trend":  "抗衰老+骨骼健康双驱动，D3+K2组合成主流"
+                                               },
+                                               {
+                                                   "name":  "Magnesium",
+                                                   "nameCN":  "镁",
+                                                   "category":  "Essential mineral",
+                                                   "salesUSD":  "$356M (SPINS 2024, Top1)",
+                                                   "growth":  "+31.6% YoY",
+                                                   "mechanism":  "参与300+酶促反应，与所有衰老标志物相关",
+                                                   "trend":  "美国最热销补充剂原料，甘氨酸镁/苏糖酸镁等高吸收形式增长快",
+                                                   "forms":  [
+                                                                 "Magnesium Glycinate",
+                                                                 "Magnesium L-Threonate",
+                                                                 "Magnesium Citrate",
+                                                                 "Magnesium Taurate"
+                                                             ]
+                                               },
+                                               {
+                                                   "name":  "Creatine",
+                                                   "nameCN":  "肌酸",
+                                                   "category":  "Cellular energy",
+                                                   "salesUSD":  "$80M (SPINS 2024)",
+                                                   "growth":  "+32.8% YoY",
+                                                   "mechanism":  "磷酸肌酸系统快速供能，肌肉收缩增强",
+                                                   "trend":  "从运动营养扩展到抗衰老和认知健康，老年肌肉维持研究支持"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "weight_management_metabolic",
+                           "name":  "体重管理与代谢健康 (Weight Management \u0026 Metabolic Health)",
+                           "description":  "GLP-1 natural boosters, blood sugar regulation, appetite control, and metabolic optimization",
+                           "marketNote":  "GLP-1药物($518亿/2024)催生天然替代品赛道爆发，\u0027Natural Ozempic\u0027概念社媒热度极高",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Berberine",
+                                                   "nameCN":  "小檗碱",
+                                                   "category":  "GLP-1 booster / Blood sugar",
+                                                   "trend":  "\u0027天然Ozempic\u0027概念社媒爆火，血糖管理+减重双驱动",
+                                                   "mechanism":  "AMPK激活，改善胰岛素敏感性，促进GLP-1分泌",
+                                                   "note":  "搜索量和销量暴涨，但与处方药相互作用需注意"
+                                               },
+                                               {
+                                                   "name":  "Nextida GC (Targeted Collagen Peptide)",
+                                                   "nameCN":  "靶向胶原蛋白肽(血糖方向)",
+                                                   "category":  "GLP-1 booster",
+                                                   "trend":  "罗赛洛开发，促进天然GLP-1和GIP分泌",
+                                                   "mechanism":  "作用于K/L细胞受体，促进GLP-1和GIP自然分泌",
+                                                   "clinicalData":  "餐后血糖波动减少43%，血糖峰值降低31-39%",
+                                                   "source":  "Rousselot clinical data 2024"
+                                               },
+                                               {
+                                                   "name":  "Glucomannan (Konjac)",
+                                                   "nameCN":  "葡甘露聚糖(魔芋)",
+                                                   "category":  "Appetite control",
+                                                   "mechanism":  "吸水膨胀产生饱腹感，延缓胃排空，模拟GLP-1效应",
+                                                   "note":  "FDA认可的减重健康声明"
+                                               },
+                                               {
+                                                   "name":  "Bitter Melon Extract",
+                                                   "nameCN":  "苦瓜提取物",
+                                                   "category":  "Blood sugar",
+                                                   "mechanism":  "含苦瓜苷，类胰岛素作用，促进糖利用",
+                                                   "trend":  "传统控糖成分，GLP-1相关机制研究增多"
+                                               },
+                                               {
+                                                   "name":  "Cinnamon Extract",
+                                                   "nameCN":  "肉桂提取物",
+                                                   "category":  "Blood sugar",
+                                                   "mechanism":  "改善胰岛素敏感性，模拟胰岛素作用",
+                                                   "trend":  "血糖管理基础配方常见成分"
+                                               },
+                                               {
+                                                   "name":  "Mulberry Leaf Extract (DNJ)",
+                                                   "nameCN":  "桑叶提取物",
+                                                   "category":  "Blood sugar",
+                                                   "mechanism":  "含1-脱氧野尻霉素(DNJ)，抑制α-葡萄糖苷酶",
+                                                   "trend":  "新一代血糖管理原料，日本市场先行，北美跟进"
+                                               },
+                                               {
+                                                   "name":  "Chromium (Picolinate / Polynicotinate)",
+                                                   "nameCN":  "铬",
+                                                   "category":  "Insulin cofactor",
+                                                   "mechanism":  "胰岛素辅助因子，增强胰岛素受体活性",
+                                                   "note":  "血糖管理配方基础矿物质"
+                                               },
+                                               {
+                                                   "name":  "Apple Cider Vinegar",
+                                                   "nameCN":  "苹果醋",
+                                                   "category":  "Metabolic support",
+                                                   "salesUSD":  "$288M (functional beverages, +145.3%)",
+                                                   "mechanism":  "醋酸延缓胃排空，改善胰岛素敏感性",
+                                                   "trend":  "功能饮料+软糖形态创新降低消费门槛"
+                                               },
+                                               {
+                                                   "name":  "Green Tea Extract (EGCG)",
+                                                   "nameCN":  "绿茶提取物(EGCG)",
+                                                   "category":  "Thermogenic",
+                                                   "mechanism":  "儿茶素促进脂肪氧化，咖啡因协同产热",
+                                                   "note":  "减重配方经典成分"
+                                               },
+                                               {
+                                                   "name":  "Conjugated Linoleic Acid (CLA)",
+                                                   "nameCN":  "共轭亚油酸",
+                                                   "category":  "Body composition",
+                                                   "mechanism":  "抑制脂肪合成酶，促进脂肪酸氧化",
+                                                   "note":  "体成分改善方向，运动人群使用"
+                                               },
+                                               {
+                                                   "name":  "5-HTP",
+                                                   "nameCN":  "5-羟基色氨酸",
+                                                   "category":  "Appetite / Mood",
+                                                   "mechanism":  "血清素前体，抑制食欲，改善情绪性进食",
+                                                   "note":  "减重+情绪双效"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "cognitive_brain_health",
+                           "name":  "认知与脑健康 (Cognitive \u0026 Brain Health)",
+                           "description":  "Nootropics, neuroprotection, focus, memory, and neuroplasticity",
+                           "marketNote":  "2024年天然渠道认知健康+10%，从老年人扩展到全年龄段(学生、上班族、游戏玩家)",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Lion\u0027s Mane (Hericium erinaceus)",
+                                                   "nameCN":  "猴头菇",
+                                                   "category":  "Medicinal mushroom / Nootropic",
+                                                   "growth":  "+28.6% (cognitive health category)",
+                                                   "trend":  "认知健康赛道增速最快蘑菇原料",
+                                                   "mechanism":  "促进NGF(神经生长因子)合成，支持神经可塑性",
+                                                   "keyBrands":  [
+                                                                     "Four Sigmatic",
+                                                                     "Real Mushrooms",
+                                                                     "Host Defense"
+                                                                 ]
+                                               },
+                                               {
+                                                   "name":  "Reishi (Ganoderma lucidum)",
+                                                   "nameCN":  "灵芝",
+                                                   "category":  "Medicinal mushroom / Adaptogen",
+                                                   "trend":  "药食同源身份获批(中国)，认知+免疫双驱动",
+                                                   "mechanism":  "三萜类+多糖协同，免疫调节，神经保护",
+                                                   "note":  "全球适应原市场预计2025年超$160亿"
+                                               },
+                                               {
+                                                   "name":  "Chaga (Inonotus obliquus)",
+                                                   "nameCN":  "白桦茸",
+                                                   "category":  "Medicinal mushroom",
+                                                   "trend":  "免疫健康类别增长快，抗氧化极强(ORAC值高)",
+                                                   "mechanism":  "超氧化物歧化酶(SOD)来源，免疫调节"
+                                               },
+                                               {
+                                                   "name":  "Cordyceps",
+                                                   "nameCN":  "冬虫夏草",
+                                                   "category":  "Medicinal mushroom / Adaptogen",
+                                                   "trend":  "运动能量+抗疲劳+认知三效",
+                                                   "mechanism":  "促进ATP生成，改善氧利用效率"
+                                               },
+                                               {
+                                                   "name":  "L-Theanine",
+                                                   "nameCN":  "L-茶氨酸",
+                                                   "category":  "Amino acid / Nootropic",
+                                                   "trend":  "聚焦+放松无嗜睡，情绪平衡热门成分",
+                                                   "mechanism":  "促进α脑波，增加GABA/多巴胺/血清素",
+                                                   "note":  "常与咖啡因联用(专注力)或单独使用(放松)"
+                                               },
+                                               {
+                                                   "name":  "Bacopa Monnieri",
+                                                   "nameCN":  "假马齿苋",
+                                                   "category":  "Ayurvedic nootropic",
+                                                   "mechanism":  "增强突触传递，抗氧化，促进树突生长",
+                                                   "note":  "阿育吠陀传统益智草药，Alpha Brain等配方常见"
+                                               },
+                                               {
+                                                   "name":  "Phosphatidylserine (PS)",
+                                                   "nameCN":  "磷脂酰丝氨酸",
+                                                   "category":  "Phospholipid",
+                                                   "mechanism":  "细胞膜磷脂成分，支持神经信号传导",
+                                                   "note":  "认知健康方向FDA健康声明"
+                                               },
+                                               {
+                                                   "name":  "MCT Oil (Medium-Chain Triglycerides)",
+                                                   "nameCN":  "中链甘油三酯",
+                                                   "category":  "Ketogenic / Brain fuel",
+                                                   "trend":  "认知健康+运动营养双赛道",
+                                                   "mechanism":  "快速转化为酮体，为大脑提供替代能源"
+                                               },
+                                               {
+                                                   "name":  "Vitamin B12 (Methylcobalamin)",
+                                                   "nameCN":  "维生素B12(甲钴胺)",
+                                                   "category":  "Essential vitamin",
+                                                   "trend":  "认知健康类别中增长快",
+                                                   "mechanism":  "髓鞘合成，同型半胱氨酸代谢，神经保护",
+                                                   "note":  "甲基化形式(Methylcobalamin)比氰钴胺更受追捧"
+                                               },
+                                               {
+                                                   "name":  "Ginkgo Biloba",
+                                                   "nameCN":  "银杏叶提取物",
+                                                   "category":  "Herbal nootropic",
+                                                   "mechanism":  "改善脑部微循环，抗氧化",
+                                                   "note":  "经典益智草药，市场成熟但仍有稳定需求"
+                                               },
+                                               {
+                                                   "name":  "Alpha-GPC",
+                                                   "nameCN":  "甘油磷酸胆碱",
+                                                   "category":  "Choline donor",
+                                                   "mechanism":  "胆碱来源，支持乙酰胆碱合成",
+                                                   "trend":  "运动+认知交叉成分，pre-workout配方增长"
+                                               },
+                                               {
+                                                   "name":  "Huperzine A",
+                                                   "nameCN":  "石杉碱甲",
+                                                   "category":  "AChE inhibitor",
+                                                   "mechanism":  "乙酰胆碱酯酶抑制剂，增强胆碱能传递",
+                                                   "note":  "蛇足石杉提取物，记忆增强方向"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "stress_mood_sleep",
+                           "name":  "压力、情绪与睡眠 (Stress, Mood \u0026 Sleep)",
+                           "description":  "Adaptogens, anxiolytics, sleep aids, and mood support",
+                           "marketNote":  "42%消费者对缓解焦虑的功能饮料感兴趣；情绪支持类功能饮料+62%",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Ashwagandha (KSM-66 / Sensoril)",
+                                                   "nameCN":  "南非醉茄",
+                                                   "category":  "Adaptogen",
+                                                   "salesUSD":  "$19M (functional beverages, +100.3%)",
+                                                   "trend":  "情绪支持类功能饮料Top1成分，适应原市场核心",
+                                                   "mechanism":  "降低皮质醇，调节HPA轴，GABAergic效应",
+                                                   "clinicalEvidence":  "491人荟萃分析：显著降低压力/焦虑水平，缓解失眠疲劳",
+                                                   "keyForms":  [
+                                                                    "KSM-66",
+                                                                    "Sensoril",
+                                                                    "Shoden"
+                                                                ]
+                                               },
+                                               {
+                                                   "name":  "Rhodiola Rosea",
+                                                   "nameCN":  "红景天",
+                                                   "category":  "Adaptogen",
+                                                   "mechanism":  "调节HPA轴，抗疲劳，改善认知表现",
+                                                   "trend":  "运动表现+压力管理双赛道，Rosavins/Salidroside为活性指标"
+                                               },
+                                               {
+                                                   "name":  "Apigenin",
+                                                   "nameCN":  "芹菜素",
+                                                   "category":  "Flavonoid / Sleep",
+                                                   "trend":  "Andrew Huberman播客推动热度，睡眠方向新星",
+                                                   "mechanism":  "苯二氮卓受体部分激动，促进GABA活性",
+                                                   "note":  "洋甘菊、芹菜天然成分"
+                                               },
+                                               {
+                                                   "name":  "Tart Cherry Extract",
+                                                   "nameCN":  "酸樱桃提取物",
+                                                   "category":  "Sleep / Recovery",
+                                                   "mechanism":  "天然褪黑素来源+抗炎花青素",
+                                                   "trend":  "运动恢复+睡眠双效，天然来源受偏好"
+                                               },
+                                               {
+                                                   "name":  "Melatonin",
+                                                   "nameCN":  "褪黑素",
+                                                   "category":  "Sleep hormone",
+                                                   "note":  "Top25榜单内但增速放缓，市场趋于成熟；低剂量(0.3-1mg)趋势"
+                                               },
+                                               {
+                                                   "name":  "Magnesium L-Threonate",
+                                                   "nameCN":  "苏糖酸镁",
+                                                   "category":  "Mineral / Sleep + Cognition",
+                                                   "trend":  "可穿越血脑屏障的镁形式，睡眠+认知双效",
+                                                   "mechanism":  "增加脑部镁浓度，增强NMDA受体功能",
+                                                   "keyBrands":  [
+                                                                     "Magtein"
+                                                                 ]
+                                               },
+                                               {
+                                                   "name":  "GABA (Gamma-Aminobutyric Acid)",
+                                                   "nameCN":  "γ-氨基丁酸",
+                                                   "category":  "Inhibitory neurotransmitter",
+                                                   "mechanism":  "中枢抑制性神经递质，促进放松和睡眠"
+                                               },
+                                               {
+                                                   "name":  "5-HTP",
+                                                   "nameCN":  "5-羟基色氨酸",
+                                                   "category":  "Serotonin precursor",
+                                                   "mechanism":  "血清素前体，改善情绪和睡眠"
+                                               },
+                                               {
+                                                   "name":  "Passionflower (Passiflora incarnata)",
+                                                   "nameCN":  "西番莲",
+                                                   "category":  "Herbal anxiolytic",
+                                                   "mechanism":  "GABA再摄取抑制，抗焦虑",
+                                                   "note":  "FDA认可的温和镇静草药"
+                                               },
+                                               {
+                                                   "name":  "Lemon Balm (Melissa officinalis)",
+                                                   "nameCN":  "香蜂草",
+                                                   "category":  "Herbal calmative",
+                                                   "mechanism":  "GABA转氨酶抑制，抗焦虑，改善睡眠质量"
+                                               },
+                                               {
+                                                   "name":  "Saffron Extract (Affron)",
+                                                   "nameCN":  "藏红花提取物",
+                                                   "category":  "Mood support",
+                                                   "trend":  "情绪支持新星，多项RCT支持抗抑郁/抗焦虑",
+                                                   "mechanism":  "调节单胺类神经递质(血清素/多巴胺/去甲肾上腺素)",
+                                                   "keyBrands":  [
+                                                                     "Affron (Pharmactive)"
+                                                                 ]
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "immune_health",
+                           "name":  "免疫健康 (Immune Health)",
+                           "description":  "Immune modulation, antiviral, antibacterial, and immune cell support",
+                           "marketNote":  "免疫健康已成为品牌\u0027基础款\u0027品类，2024年天然渠道+5%",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Elderberry (Sambucus nigra)",
+                                                   "nameCN":  "接骨木莓",
+                                                   "category":  "Herbal immune",
+                                                   "note":  "Top25榜单内但增速放缓，市场趋于成熟"
+                                               },
+                                               {
+                                                   "name":  "Zinc",
+                                                   "nameCN":  "锌",
+                                                   "category":  "Essential mineral",
+                                                   "trend":  "免疫健康基础矿物质，COVID后持续热度"
+                                               },
+                                               {
+                                                   "name":  "Vitamin D3",
+                                                   "nameCN":  "维生素D3",
+                                                   "category":  "Essential vitamin",
+                                                   "trend":  "免疫调节+骨骼健康，D3+K2组合成主流"
+                                               },
+                                               {
+                                                   "name":  "Vitamin C",
+                                                   "nameCN":  "维生素C",
+                                                   "category":  "Essential vitamin / Antioxidant",
+                                                   "note":  "免疫配方基础成分，脂质体/酯化C等形式创新"
+                                               },
+                                               {
+                                                   "name":  "Quercetin",
+                                                   "nameCN":  "槲皮素",
+                                                   "category":  "Flavonoid / Zinc ionophore",
+                                                   "mechanism":  "锌离子载体，抗病毒，抗炎，免疫调节",
+                                                   "trend":  "常与锌/维C联用的免疫配方"
+                                               },
+                                               {
+                                                   "name":  "NAC (N-Acetylcysteine)",
+                                                   "nameCN":  "N-乙酰半胱氨酸",
+                                                   "category":  "Antioxidant precursor",
+                                                   "mechanism":  "谷胱甘肽前体，黏液溶解，抗炎",
+                                                   "trend":  "免疫+肝脏+呼吸三效，COVID后认知度提升"
+                                               },
+                                               {
+                                                   "name":  "Propolis",
+                                                   "nameCN":  "蜂胶",
+                                                   "category":  "Bee product / Immune",
+                                                   "growth":  "+40.5% YoY (immune category)",
+                                                   "mechanism":  "抗菌，抗病毒，抗炎，免疫调节"
+                                               },
+                                               {
+                                                   "name":  "Echinacea",
+                                                   "nameCN":  "紫锥菊",
+                                                   "category":  "Herbal immune",
+                                                   "trend":  "免疫健康增长快",
+                                                   "mechanism":  "增强NK细胞活性，促进干扰素产生"
+                                               },
+                                               {
+                                                   "name":  "Spirulina / Blue-Green Algae",
+                                                   "nameCN":  "螺旋藻",
+                                                   "category":  "Superfood / Immune",
+                                                   "growth":  "+213% (cleanse/detox category)",
+                                                   "mechanism":  "藻蓝蛋白抗氧化，免疫增强"
+                                               },
+                                               {
+                                                   "name":  "Lactoferrin",
+                                                   "nameCN":  "乳铁蛋白",
+                                                   "category":  "Iron-binding glycoprotein",
+                                                   "trend":  "从婴儿营养延伸到成人免疫，抗病毒/抗菌",
+                                                   "mechanism":  "铁螯合，抗病原体，肠道屏障保护"
+                                               },
+                                               {
+                                                   "name":  "Beta-Glucan (from Yeast/Oats)",
+                                                   "nameCN":  "β-葡聚糖",
+                                                   "category":  "Immune modulator",
+                                                   "mechanism":  "激活巨噬细胞和NK细胞，免疫调节"
+                                               },
+                                               {
+                                                   "name":  "Astragalus Root",
+                                                   "nameCN":  "黄芪",
+                                                   "category":  "Traditional Chinese immune herb",
+                                                   "mechanism":  "多糖+皂苷协同，免疫调节，抗疲劳"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "digestive_gut_health",
+                           "name":  "消化与肠道健康 (Digestive \u0026 Gut Health)",
+                           "description":  "Probiotics, prebiotics, postbiotics, gut barrier, and digestive support",
+                           "marketNote":  "消化健康凭体量位居天然渠道Top1类别；益生菌赛道2025年突破1500亿元(中国)",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Akkermansia muciniphila",
+                                                   "nameCN":  "嗜黏蛋白阿克曼氏菌",
+                                                   "category":  "Next-gen probiotic",
+                                                   "trend":  "下一代益生菌明星，代谢健康+肠道屏障",
+                                                   "mechanism":  "增强肠道黏液层，改善肠道屏障功能，代谢调节",
+                                                   "keyBrands":  [
+                                                                     "Pendulum"
+                                                                 ],
+                                                   "note":  "热灭活形式也在研究中"
+                                               },
+                                               {
+                                                   "name":  "Postbiotics",
+                                                   "nameCN":  "后生元",
+                                                   "category":  "Metabolite / Heat-treated bacteria",
+                                                   "trend":  "灭活菌体/代谢产物，稳定性优于活菌益生菌",
+                                                   "mechanism":  "短链脂肪酸、细菌素、胞外多糖等代谢产物",
+                                                   "note":  "增长迅速的新品类，解决活菌储存稳定性问题"
+                                               },
+                                               {
+                                                   "name":  "Probiotics (Multi-strain)",
+                                                   "nameCN":  "益生菌(多菌株)",
+                                                   "category":  "Living microorganism",
+                                                   "note":  "长期核心品类，特定菌株功效研究不断深化"
+                                               },
+                                               {
+                                                   "name":  "Prebiotic Fiber (Inulin / FOS / GOS)",
+                                                   "nameCN":  "益生元纤维(菊粉/FOS/GOS)",
+                                                   "category":  "Prebiotic",
+                                                   "growth":  "+140.4% (fiber in functional beverages)",
+                                                   "mechanism":  "选择性促进有益菌生长，产生短链脂肪酸"
+                                               },
+                                               {
+                                                   "name":  "Butyrate (Sodium Butyrate)",
+                                                   "nameCN":  "丁酸盐",
+                                                   "category":  "Short-chain fatty acid",
+                                                   "mechanism":  "结肠上皮细胞主要能源，抗炎，肠道屏障修复"
+                                               },
+                                               {
+                                                   "name":  "Polyphenols (Grape Seed / Pomegranate / Green Tea)",
+                                                   "nameCN":  "多酚类",
+                                                   "category":  "Prebiotic / Antioxidant",
+                                                   "trend":  "益生元效应+抗氧化，促进Akkermansia等有益菌",
+                                                   "mechanism":  "调节肠道菌群组成，抗炎抗氧化"
+                                               },
+                                               {
+                                                   "name":  "Kombucha",
+                                                   "nameCN":  "康普茶",
+                                                   "category":  "Fermented beverage",
+                                                   "salesUSD":  "$743M (digestive health beverages)",
+                                                   "growth":  "+704.7% (cleanse/detox category)",
+                                                   "mechanism":  "有机酸、益生菌、酶等发酵产物"
+                                               },
+                                               {
+                                                   "name":  "Digestive Enzymes (Bromelain / Papain / Protease)",
+                                                   "nameCN":  "消化酶(菠萝蛋白酶/木瓜蛋白酶)",
+                                                   "category":  "Enzyme",
+                                                   "mechanism":  "辅助蛋白质/脂肪/碳水化合物消化"
+                                               },
+                                               {
+                                                   "name":  "Artichoke Extract (Cynarin)",
+                                                   "nameCN":  "朝鲜蓟提取物",
+                                                   "category":  "Herbal digestive",
+                                                   "mechanism":  "促进胆汁分泌，改善脂肪消化，肝保护"
+                                               },
+                                               {
+                                                   "name":  "Slippery Elm",
+                                                   "nameCN":  "滑榆皮",
+                                                   "category":  "Demulcent herb",
+                                                   "mechanism":  "黏液质保护胃肠黏膜"
+                                               },
+                                               {
+                                                   "name":  "Psyllium Husk",
+                                                   "nameCN":  "洋车前子壳",
+                                                   "category":  "Soluble fiber",
+                                                   "mechanism":  "吸水膨胀，促进肠道蠕动，降低胆固醇"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "liver_detox",
+                           "name":  "肝脏健康与排毒 (Liver Health \u0026 Detox)",
+                           "description":  "Hepatoprotective, detoxification support, and cleanse",
+                           "marketNote":  "水飞蓟首次进入Top25，养肝概念在北美从亚裔圈扩展到主流市场",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Milk Thistle (Silymarin)",
+                                                   "nameCN":  "水飞蓟",
+                                                   "category":  "Hepatoprotective herb",
+                                                   "salesUSD":  "$17.54M (SPINS 2024, Top23)",
+                                                   "growth":  "+34.6% YoY",
+                                                   "trend":  "首次进入美国Top25榜单，养肝概念扩展到主流",
+                                                   "mechanism":  "水飞蓟素抗氧化，肝细胞膜保护，促进肝再生",
+                                                   "note":  "全球原料供应主要集中在中国东北(盘锦天源、辽宁沃德等)"
+                                               },
+                                               {
+                                                   "name":  "NAC (N-Acetylcysteine)",
+                                                   "nameCN":  "N-乙酰半胱氨酸",
+                                                   "category":  "Glutathione precursor",
+                                                   "mechanism":  "谷胱甘肽前体，肝脏解毒Phase II支持"
+                                               },
+                                               {
+                                                   "name":  "Dandelion Root",
+                                                   "nameCN":  "蒲公英根",
+                                                   "category":  "Herbal detox",
+                                                   "trend":  "清洁排毒类新品上市",
+                                                   "mechanism":  "利胆，利尿，抗氧化"
+                                               },
+                                               {
+                                                   "name":  "Artichoke Extract",
+                                                   "nameCN":  "朝鲜蓟提取物",
+                                                   "category":  "Hepatoprotective",
+                                                   "mechanism":  "促进胆汁分泌，降胆固醇，肝保护"
+                                               },
+                                               {
+                                                   "name":  "Hovenia Dulcis (Japanese Raisin Tree)",
+                                                   "nameCN":  "枳椇子",
+                                                   "category":  "Hangover / Liver",
+                                                   "trend":  "水飞蓟之外的新原料，解酒+养肝方向",
+                                                   "mechanism":  "二氢杨梅素(DHM)促进乙醛脱氢酶活性"
+                                               },
+                                               {
+                                                   "name":  "Pueraria (Kudzu Root)",
+                                                   "nameCN":  "葛根",
+                                                   "category":  "Herbal liver / Hangover",
+                                                   "trend":  "解酒养肝方向新原料",
+                                                   "mechanism":  "葛根素促进乙醇代谢，肝保护"
+                                               },
+                                               {
+                                                   "name":  "Fucoxanthin",
+                                                   "nameCN":  "岩藻黄素",
+                                                   "category":  "Carotenoid / Liver",
+                                                   "trend":  "养肝新原料方向，褐藻提取",
+                                                   "mechanism":  "促进脂肪代谢，肝脂肪堆积改善"
+                                               },
+                                               {
+                                                   "name":  "Glutathione (Reduced / Liposomal)",
+                                                   "nameCN":  "谷胱甘肽",
+                                                   "category":  "Master antioxidant",
+                                                   "trend":  "脂质体形式提高口服吸收率，排毒+美白双效",
+                                                   "mechanism":  "肝脏Phase II解毒核心物质，抗氧化"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "joint_bone_mobility",
+                           "name":  "关节与骨骼健康 (Joint \u0026 Bone Health)",
+                           "description":  "Joint comfort, mobility, cartilage support, and bone density",
+                           "marketNote":  "骨骼健康为传统大盘品类，UC-II等新型成分带来差异化",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "UC-II (Undenatured Type II Collagen)",
+                                                   "nameCN":  "未变性II型胶原蛋白",
+                                                   "category":  "Joint support",
+                                                   "trend":  "与氨糖/软骨素竞争的新一代关节成分，每天40mg低剂量",
+                                                   "mechanism":  "口服耐受机制，免疫调节减少关节软骨攻击",
+                                                   "keyBrands":  [
+                                                                     "Lonza UC-II"
+                                                                 ],
+                                                   "clinicalEvidence":  "多项RCT显示优于氨糖+软骨素组合"
+                                               },
+                                               {
+                                                   "name":  "Glucosamine Sulfate / HCl",
+                                                   "nameCN":  "氨基葡萄糖",
+                                                   "category":  "Cartilage building block",
+                                                   "mechanism":  "软骨基质合成前体，抗炎"
+                                               },
+                                               {
+                                                   "name":  "Chondroitin Sulfate",
+                                                   "nameCN":  "硫酸软骨素",
+                                                   "category":  "Cartilage support",
+                                                   "mechanism":  "抑制软骨降解酶，保持软骨水分"
+                                               },
+                                               {
+                                                   "name":  "MSM (Methylsulfonylmethane)",
+                                                   "nameCN":  "甲基磺酰甲烷",
+                                                   "category":  "Organic sulfur",
+                                                   "mechanism":  "有机硫来源，抗炎，结缔组织支持"
+                                               },
+                                               {
+                                                   "name":  "Boswellia Serrata (AKBA)",
+                                                   "nameCN":  "乳香(乳香酸AKBA)",
+                                                   "category":  "Anti-inflammatory herb",
+                                                   "mechanism":  "5-LOX抑制剂，抗炎，减少软骨降解",
+                                                   "trend":  "植物基抗炎方向，3-O-乙酰-11-酮-β-乳香酸(AKBA)为关键活性"
+                                               },
+                                               {
+                                                   "name":  "Collagen Peptides (Type I \u0026 III)",
+                                                   "nameCN":  "胶原蛋白肽(I型+III型)",
+                                                   "category":  "Structural protein",
+                                                   "salesUSD":  "$424M (SPINS 2024)",
+                                                   "mechanism":  "提供关节/皮肤/骨骼结构蛋白氨基酸",
+                                                   "note":  "TikTok Shop日销5600+单的热门品类"
+                                               },
+                                               {
+                                                   "name":  "Vitamin D3 + K2",
+                                                   "nameCN":  "维生素D3+K2",
+                                                   "category":  "Bone metabolism",
+                                                   "trend":  "D3+K2组合成骨骼健康主流配方",
+                                                   "mechanism":  "D3促进钙吸收，K2引导钙沉积到骨骼(非血管)"
+                                               },
+                                               {
+                                                   "name":  "Strontium",
+                                                   "nameCN":  "锶",
+                                                   "category":  "Bone density",
+                                                   "mechanism":  "促进成骨细胞活性，抑制破骨细胞",
+                                                   "note":  "骨骼密度方向，Garden of Life等品牌使用"
+                                               },
+                                               {
+                                                   "name":  "Hyaluronic Acid",
+                                                   "nameCN":  "透明质酸",
+                                                   "category":  "Joint lubricant",
+                                                   "mechanism":  "关节滑液成分，保持关节润滑和弹性",
+                                                   "trend":  "口服透明质酸关节方向+美容方向双驱动"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "skin_beauty",
+                           "name":  "美容与皮肤健康 (Beauty \u0026 Skin Health)",
+                           "description":  "Beauty-from-within, skin hydration, anti-aging, hair and nail support",
+                           "marketNote":  "美容由内概念持续增长，胶原蛋白+虾青素+神经酰胺为核心",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Collagen Peptides (Verisol)",
+                                                   "nameCN":  "胶原蛋白肽",
+                                                   "category":  "Structural protein",
+                                                   "mechanism":  "刺激成纤维细胞产生胶原/弹性蛋白/透明质酸",
+                                                   "keyForms":  [
+                                                                    "Verisol (Gelita)",
+                                                                    "Fortigel",
+                                                                    "Naticol"
+                                                                ]
+                                               },
+                                               {
+                                                   "name":  "Astaxanthin",
+                                                   "nameCN":  "虾青素",
+                                                   "category":  "Carotenoid / Antioxidant",
+                                                   "mechanism":  "抗氧化力是维E的6000倍，穿越血脑/血视网膜屏障",
+                                                   "trend":  "美容+眼部+运动恢复三效，雨生红球藻来源"
+                                               },
+                                               {
+                                                   "name":  "Ceramides (Phytoceramides / Ceramide-PCD)",
+                                                   "nameCN":  "神经酰胺",
+                                                   "category":  "Skin lipid",
+                                                   "trend":  "口服神经酰胺改善皮肤屏障和水分",
+                                                   "mechanism":  "补充皮肤角质层脂质，修复屏障功能",
+                                                   "keyBrands":  [
+                                                                     "Ceramide-PCD (Evonik)"
+                                                                 ]
+                                               },
+                                               {
+                                                   "name":  "Hyaluronic Acid (Oral)",
+                                                   "nameCN":  "口服透明质酸",
+                                                   "category":  "Glycosaminoglycan",
+                                                   "mechanism":  "增加皮肤水分，减少皱纹深度",
+                                                   "trend":  "口服HA在FDA获批后市场加速"
+                                               },
+                                               {
+                                                   "name":  "Biotin",
+                                                   "nameCN":  "生物素",
+                                                   "category":  "B-vitamin",
+                                                   "mechanism":  "角蛋白合成支持，头发/指甲健康"
+                                               },
+                                               {
+                                                   "name":  "Vitamin C",
+                                                   "nameCN":  "维生素C",
+                                                   "category":  "Antioxidant / Collagen cofactor",
+                                                   "mechanism":  "脯氨酸/赖氨酸羟化酶辅助因子，胶原合成必需"
+                                               },
+                                               {
+                                                   "name":  "Vitamin E (Tocotrienols)",
+                                                   "nameCN":  "维生素E(生育三烯酚)",
+                                                   "category":  "Antioxidant",
+                                                   "trend":  "生育三烯酚比生育酚抗氧化力更强",
+                                                   "mechanism":  "脂溶性抗氧化，保护细胞膜"
+                                               },
+                                               {
+                                                   "name":  "CoQ10 (Ubiquinol)",
+                                                   "nameCN":  "辅酶Q10(泛醇)",
+                                                   "category":  "Antioxidant / Cellular energy",
+                                                   "mechanism":  "线粒体电子传递链，抗氧化",
+                                                   "trend":  "泛醇(Ubiquinol)比泛醌(Ubiquinone)吸收更好"
+                                               },
+                                               {
+                                                   "name":  "Pycnogenol (Pine Bark Extract)",
+                                                   "nameCN":  "碧萝芷(松树皮提取物)",
+                                                   "category":  "Antioxidant / Vascular",
+                                                   "mechanism":  "原花青素，胶原保护，微循环改善"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "eye_health",
+                           "name":  "眼部健康 (Eye Health)",
+                           "description":  "Vision support, macular health, blue light protection, and dry eye",
+                           "marketNote":  "数字化时代蓝光暴露增加，AREDS2配方为基础，虾青素等新成分补充",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Lutein",
+                                                   "nameCN":  "叶黄素",
+                                                   "category":  "Carotenoid",
+                                                   "mechanism":  "黄斑色素主要成分，蓝光过滤，抗氧化"
+                                               },
+                                               {
+                                                   "name":  "Zeaxanthin",
+                                                   "nameCN":  "玉米黄质",
+                                                   "category":  "Carotenoid",
+                                                   "mechanism":  "黄斑中心凹主要类胡萝卜素",
+                                                   "note":  "常与叶黄素联用(AREDS2配方)"
+                                               },
+                                               {
+                                                   "name":  "Astaxanthin",
+                                                   "nameCN":  "虾青素",
+                                                   "category":  "Carotenoid",
+                                                   "mechanism":  "穿越血视网膜屏障，抗炎，改善眼部血流",
+                                                   "trend":  "眼疲劳/干眼方向新星"
+                                               },
+                                               {
+                                                   "name":  "Bilberry Extract (Anthocyanins)",
+                                                   "nameCN":  "越橘提取物",
+                                                   "category":  "Herbal eye",
+                                                   "mechanism":  "花青素促进视紫红质再生，改善暗适应"
+                                               },
+                                               {
+                                                   "name":  "Eyebright (Euphrasia)",
+                                                   "nameCN":  "小米草",
+                                                   "category":  "Herbal eye",
+                                                   "mechanism":  "传统眼部草药，抗炎，收敛"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "cardiovascular",
+                           "name":  "心血管健康 (Cardiovascular Health)",
+                           "description":  "Heart function, cholesterol, blood pressure, and vascular health",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Omega-3 (EPA/DHA)",
+                                                   "nameCN":  "Omega-3脂肪酸",
+                                                   "category":  "Essential fatty acid",
+                                                   "mechanism":  "降低甘油三酯，抗炎，抗心律失常",
+                                                   "forms":  [
+                                                                 "鱼油",
+                                                                 "磷虾油",
+                                                                 "藻油(素食)"
+                                                             ]
+                                               },
+                                               {
+                                                   "name":  "CoQ10 (Ubiquinol)",
+                                                   "nameCN":  "辅酶Q10",
+                                                   "category":  "Antioxidant / Mitochondrial",
+                                                   "mechanism":  "心肌细胞能量产生，抗氧化保护"
+                                               },
+                                               {
+                                                   "name":  "Bergamot Extract (Citrus bergamia)",
+                                                   "nameCN":  "佛手柑提取物",
+                                                   "category":  "Cholesterol support",
+                                                   "trend":  "降胆固醇植物成分新星",
+                                                   "mechanism":  "多酚类抑制HMG-CoA还原酶，改善血脂谱"
+                                               },
+                                               {
+                                                   "name":  "Citrus Bergamia Polyphenols",
+                                                   "nameCN":  "柑橘多酚",
+                                                   "category":  "Vascular health",
+                                                   "mechanism":  "改善血管内皮功能，降LDL"
+                                               },
+                                               {
+                                                   "name":  "Plant Sterols / Stanols",
+                                                   "nameCN":  "植物甾醇",
+                                                   "category":  "Cholesterol blocker",
+                                                   "mechanism":  "竞争性抑制肠道胆固醇吸收",
+                                                   "note":  "FDA认可的降胆固醇健康声明"
+                                               },
+                                               {
+                                                   "name":  "Red Yeast Rice (Monacolin K)",
+                                                   "nameCN":  "红曲米",
+                                                   "category":  "Cholesterol support",
+                                                   "mechanism":  "含莫纳可林K(天然他汀类似物)",
+                                                   "note":  "FDA监管争议，市场仍有需求"
+                                               },
+                                               {
+                                                   "name":  "Aged Garlic Extract",
+                                                   "nameCN":  "陈蒜提取物",
+                                                   "category":  "Cardiovascular",
+                                                   "mechanism":  "降低同型半胱氨酸，改善血管弹性"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "sports_performance",
+                           "name":  "运动表现与恢复 (Sports Performance \u0026 Recovery)",
+                           "description":  "Pre-workout, endurance, recovery, electrolytes, and muscle support",
+                           "marketNote":  "水分补充+32.8%，电解质从专业运动延伸到日常健康需求人群",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Creatine Monohydrate",
+                                                   "nameCN":  "一水肌酸",
+                                                   "category":  "Performance / Strength",
+                                                   "growth":  "+32.8% YoY",
+                                                   "mechanism":  "磷酸肌酸快速供能，增加肌肉力量和功率输出",
+                                                   "trend":  "从运动营养扩展到抗衰老和认知健康"
+                                               },
+                                               {
+                                                   "name":  "Electrolytes (Potassium / Sodium / Magnesium)",
+                                                   "nameCN":  "电解质(钾/钠/镁)",
+                                                   "category":  "Hydration",
+                                                   "potassiumGrowth":  "+414.8%",
+                                                   "trend":  "水分补充品类主导增长，Liquid I.V.等品牌推动",
+                                                   "mechanism":  "维持体液平衡，神经肌肉功能"
+                                               },
+                                               {
+                                                   "name":  "Taurine",
+                                                   "nameCN":  "牛磺酸",
+                                                   "category":  "Amino acid / Hydration",
+                                                   "growth":  "+179.2%",
+                                                   "mechanism":  "渗透压调节，抗氧化，心血管保护"
+                                               },
+                                               {
+                                                   "name":  "Beta-Alanine",
+                                                   "nameCN":  "β-丙氨酸",
+                                                   "category":  "Buffer / Endurance",
+                                                   "mechanism":  "肌肽前体，缓冲肌肉酸性，延长高强度运动"
+                                               },
+                                               {
+                                                   "name":  "Citrulline (L-Citrulline / Citrulline Malate)",
+                                                   "nameCN":  "瓜氨酸",
+                                                   "category":  "NO booster / Pump",
+                                                   "mechanism":  "促进一氧化氮生成，改善血流和泵感"
+                                               },
+                                               {
+                                                   "name":  "BCAA / EAA",
+                                                   "nameCN":  "支链氨基酸/必需氨基酸",
+                                                   "category":  "Amino acid / Recovery",
+                                                   "mechanism":  "促进肌肉蛋白合成，减少肌肉分解"
+                                               },
+                                               {
+                                                   "name":  "Tongkat Ali (Eurycoma longifolia)",
+                                                   "nameCN":  "东革阿里",
+                                                   "category":  "Adaptogen / Testosterone",
+                                                   "trend":  "睾酮支持+运动表现，社媒推动增长",
+                                                   "mechanism":  "调节皮质醇/睾酮比值，促进Leydig细胞功能"
+                                               },
+                                               {
+                                                   "name":  "Beetroot Extract (Nitrate)",
+                                                   "nameCN":  "甜菜根提取物",
+                                                   "category":  "NO booster / Endurance",
+                                                   "mechanism":  "膳食硝酸盐→亚硝酸盐→NO，改善氧效率"
+                                               },
+                                               {
+                                                   "name":  "Caffeine + L-Theanine",
+                                                   "nameCN":  "咖啡因+L-茶氨酸",
+                                                   "category":  "Focus / Energy",
+                                                   "mechanism":  "咖啡因提神+茶氨酸平滑jitter，专注力提升"
+                                               },
+                                               {
+                                                   "name":  "HMB (Beta-Hydroxy Beta-Methylbutyrate)",
+                                                   "nameCN":  "β-羟基-β-甲基丁酸",
+                                                   "category":  "Anti-catabolic",
+                                                   "mechanism":  "亮氨酸代谢物，减少肌肉蛋白分解",
+                                                   "note":  "老年肌肉减少症方向有研究支持"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "mens_health",
+                           "name":  "男性健康 (Men\u0027s Health)",
+                           "description":  "Testosterone support, prostate health, and male vitality",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Tongkat Ali",
+                                                   "nameCN":  "东革阿里",
+                                                   "category":  "Testosterone support",
+                                                   "mechanism":  "调节皮质醇/睾酮比值",
+                                                   "trend":  "社媒推动的男性健康明星成分"
+                                               },
+                                               {
+                                                   "name":  "Ashwagandha",
+                                                   "nameCN":  "南非醉茄",
+                                                   "category":  "Adaptogen / T support",
+                                                   "mechanism":  "降低皮质醇→间接支持睾酮"
+                                               },
+                                               {
+                                                   "name":  "Zinc",
+                                                   "nameCN":  "锌",
+                                                   "category":  "Essential mineral / T support",
+                                                   "mechanism":  "睾酮合成必需矿物质"
+                                               },
+                                               {
+                                                   "name":  "Saw Palmetto",
+                                                   "nameCN":  "锯棕榈",
+                                                   "category":  "Prostate health",
+                                                   "mechanism":  "5α-还原酶抑制，减少DHT"
+                                               },
+                                               {
+                                                   "name":  "Beta-Sitosterol",
+                                                   "nameCN":  "β-谷甾醇",
+                                                   "category":  "Prostate / Cholesterol",
+                                                   "mechanism":  "抑制5α-还原酶，改善尿流"
+                                               },
+                                               {
+                                                   "name":  "Pumpkin Seed Oil",
+                                                   "nameCN":  "南瓜籽油",
+                                                   "category":  "Prostate / Hair",
+                                                   "mechanism":  "植物甾醇，DHT调节"
+                                               },
+                                               {
+                                                   "name":  "Maca Root",
+                                                   "nameCN":  "玛卡",
+                                                   "category":  "Vitality / Libido",
+                                                   "mechanism":  "内分泌调节，能量支持"
+                                               },
+                                               {
+                                                   "name":  "Boron",
+                                                   "nameCN":  "硼",
+                                                   "category":  "Trace mineral / T support",
+                                                   "mechanism":  "增加游离睾酮，改善维D/镁代谢"
+                                               },
+                                               {
+                                                   "name":  "DIM (Diindolylmethane)",
+                                                   "nameCN":  "二吲哚甲烷",
+                                                   "category":  "Estrogen metabolism",
+                                                   "mechanism":  "促进雌激素向有利代谢物转化",
+                                                   "note":  "十字花科蔬菜提取物"
+                                               },
+                                               {
+                                                   "name":  "Shilajit",
+                                                   "nameCN":  "黑沥青/仙人掌树脂",
+                                                   "category":  "Mineral pitch / Vitality",
+                                                   "trend":  "TikTok/Instagram爆火的男性活力成分",
+                                                   "mechanism":  "含富里酸+80+矿物质，线粒体支持"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "womens_health",
+                           "name":  "女性健康 (Women\u0027s Health)",
+                           "description":  "Hormone balance, menopause support, PCOS, and female-specific needs",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Inositol (Myo-Inositol / D-Chiro-Inositol)",
+                                                   "nameCN":  "肌醇",
+                                                   "category":  "Insulin sensitizer / Hormone",
+                                                   "trend":  "PCOS、胰岛素敏感性、情绪管理热门",
+                                                   "mechanism":  "第二信使，胰岛素信号传导，FSH信号"
+                                               },
+                                               {
+                                                   "name":  "Vitex (Chasteberry)",
+                                                   "nameCN":  "圣洁莓",
+                                                   "category":  "Hormonal balance",
+                                                   "mechanism":  "调节垂体前叶功能，影响FSH/LH平衡"
+                                               },
+                                               {
+                                                   "name":  "Black Cohosh",
+                                                   "nameCN":  "黑升麻",
+                                                   "category":  "Menopause",
+                                                   "mechanism":  "植物雌激素样作用，缓解潮热"
+                                               },
+                                               {
+                                                   "name":  "Red Clover Isoflavones",
+                                                   "nameCN":  "红三叶草异黄酮",
+                                                   "category":  "Menopause / Phytoestrogen",
+                                                   "mechanism":  "植物雌激素，缓解更年期症状"
+                                               },
+                                               {
+                                                   "name":  "DHEA",
+                                                   "nameCN":  "脱氢表雄酮",
+                                                   "category":  "Hormone precursor",
+                                                   "mechanism":  "雄激素/雌激素前体，卵巢储备支持"
+                                               },
+                                               {
+                                                   "name":  "Iron (Bisglycinate)",
+                                                   "nameCN":  "铁(甘氨酸亚铁)",
+                                                   "category":  "Essential mineral",
+                                                   "mechanism":  "血红蛋白合成，经期失血补充",
+                                                   "note":  "甘氨酸亚铁形式胃肠刺激更小"
+                                               },
+                                               {
+                                                   "name":  "Folate (5-MTHF)",
+                                                   "nameCN":  "叶酸(5-甲基四氢叶酸)",
+                                                   "category":  "B-vitamin / Prenatal",
+                                                   "mechanism":  "DNA合成，神经管发育，MTHFR基因人群适用"
+                                               },
+                                               {
+                                                   "name":  "Dong Quai",
+                                                   "nameCN":  "当归",
+                                                   "category":  "Traditional women\u0027s herb",
+                                                   "mechanism":  "补血活血，调节月经周期"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "respiratory",
+                           "name":  "呼吸健康 (Respiratory Health)",
+                           "description":  "Lung support, airway health, and respiratory comfort",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "NAC (N-Acetylcysteine)",
+                                                   "nameCN":  "N-乙酰半胱氨酸",
+                                                   "category":  "Mucolytic / Antioxidant",
+                                                   "mechanism":  "黏液溶解，谷胱甘肽前体，气道保护"
+                                               },
+                                               {
+                                                   "name":  "Quercetin",
+                                                   "nameCN":  "槲皮素",
+                                                   "category":  "Anti-inflammatory / Antihistamine",
+                                                   "mechanism":  "肥大细胞稳定，抗组胺，COPD基础细胞再生研究",
+                                                   "source":  "Respiratory Research 2024"
+                                               },
+                                               {
+                                                   "name":  "Bromelain",
+                                                   "nameCN":  "菠萝蛋白酶",
+                                                   "category":  "Enzyme / Anti-inflammatory",
+                                                   "mechanism":  "黏液溶解，抗炎，增强槲皮素吸收",
+                                                   "note":  "常与槲皮素联用"
+                                               },
+                                               {
+                                                   "name":  "Cordyceps",
+                                                   "nameCN":  "冬虫夏草",
+                                                   "category":  "Adaptogen / Respiratory",
+                                                   "mechanism":  "改善氧利用效率，支气管扩张"
+                                               },
+                                               {
+                                                   "name":  "Ivy Leaf Extract (Hedera helix)",
+                                                   "nameCN":  "常春藤叶提取物",
+                                                   "category":  "Herbal respiratory",
+                                                   "mechanism":  "皂苷类支气管扩张，黏液溶解"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "energy_fatigue",
+                           "name":  "能量与抗疲劳 (Energy \u0026 Anti-Fatigue)",
+                           "description":  "Natural energy support, mitochondrial function, and fatigue reduction",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Cordyceps",
+                                                   "nameCN":  "冬虫夏草",
+                                                   "category":  "Adaptogen / Energy",
+                                                   "mechanism":  "促进ATP生成，改善氧利用效率"
+                                               },
+                                               {
+                                                   "name":  "Rhodiola Rosea",
+                                                   "nameCN":  "红景天",
+                                                   "category":  "Adaptogen / Anti-fatigue",
+                                                   "mechanism":  "调节HPA轴，抗疲劳，改善认知"
+                                               },
+                                               {
+                                                   "name":  "Panax Ginseng",
+                                                   "nameCN":  "人参",
+                                                   "category":  "Adaptogen / Energy",
+                                                   "mechanism":  "人参皂苷调节HPA轴，改善能量代谢"
+                                               },
+                                               {
+                                                   "name":  "CoQ10 (Ubiquinol)",
+                                                   "nameCN":  "辅酶Q10",
+                                                   "category":  "Mitochondrial energy",
+                                                   "mechanism":  "线粒体电子传递链关键辅酶"
+                                               },
+                                               {
+                                                   "name":  "PQQ (Pyrroloquinoline Quinone)",
+                                                   "nameCN":  "吡咯喹啉醌",
+                                                   "category":  "Mitochondrial biogenesis",
+                                                   "mechanism":  "促进线粒体新生，抗氧化",
+                                                   "note":  "常与CoQ10联用"
+                                               },
+                                               {
+                                                   "name":  "Iron",
+                                                   "nameCN":  "铁",
+                                                   "category":  "Oxygen transport",
+                                                   "mechanism":  "血红蛋白核心元素，氧气运输"
+                                               },
+                                               {
+                                                   "name":  "Vitamin B Complex",
+                                                   "nameCN":  "B族维生素",
+                                                   "category":  "Energy metabolism",
+                                                   "mechanism":  "能量代谢辅酶，甲基化支持"
+                                               },
+                                               {
+                                                   "name":  "Shilajit",
+                                                   "nameCN":  "黑沥青",
+                                                   "category":  "Mineral pitch / Energy",
+                                                   "mechanism":  "富里酸促进线粒体功能"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "anti_inflammatory",
+                           "name":  "抗炎与抗氧化 (Anti-Inflammatory \u0026 Antioxidant)",
+                           "description":  "Systemic inflammation reduction and oxidative stress protection",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Curcumin (with BioPerine / Liposomal)",
+                                                   "nameCN":  "姜黄素",
+                                                   "category":  "Anti-inflammatory polyphenol",
+                                                   "salesUSD":  "$528M (SPINS 2024)",
+                                                   "mechanism":  "NF-κB抑制，COX-2/LOX双重抑制",
+                                                   "note":  "生物利用度是关键挑战，脂质体/胡椒碱增吸收"
+                                               },
+                                               {
+                                                   "name":  "Omega-3 (EPA/DHA)",
+                                                   "nameCN":  "Omega-3脂肪酸",
+                                                   "category":  "Essential fatty acid",
+                                                   "mechanism":  "促炎因子→抗炎消退素转换"
+                                               },
+                                               {
+                                                   "name":  "Boswellia Serrata",
+                                                   "nameCN":  "乳香",
+                                                   "category":  "Herbal anti-inflammatory",
+                                                   "mechanism":  "5-LOX抑制，抗炎"
+                                               },
+                                               {
+                                                   "name":  "Ginger Extract",
+                                                   "nameCN":  "生姜提取物",
+                                                   "category":  "Herbal anti-inflammatory",
+                                                   "mechanism":  "姜辣素/姜烯酚抑制COX/LOX"
+                                               },
+                                               {
+                                                   "name":  "Palmitoylethanolamide (PEA)",
+                                                   "nameCN":  "棕榈酰乙醇胺",
+                                                   "category":  "Endocannabinoid-like",
+                                                   "trend":  "内源性大麻素系统调节，疼痛/炎症方向新星",
+                                                   "mechanism":  "激活PPAR-α，抑制肥大细胞脱颗粒"
+                                               },
+                                               {
+                                                   "name":  "SOD (Superoxide Dismutase)",
+                                                   "nameCN":  "超氧化物歧化酶",
+                                                   "category":  "Antioxidant enzyme",
+                                                   "mechanism":  "清除超氧阴离子自由基"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "blood_sugar_metabolic",
+                           "name":  "血糖与代谢综合征 (Blood Sugar \u0026 Metabolic Syndrome)",
+                           "description":  "Glycemic control, insulin sensitivity, and metabolic health",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Berberine",
+                                                   "nameCN":  "小檗碱",
+                                                   "category":  "AMPK activator",
+                                                   "mechanism":  "AMPK激活，胰岛素敏感性，GLP-1促进"
+                                               },
+                                               {
+                                                   "name":  "Chromium",
+                                                   "nameCN":  "铬",
+                                                   "category":  "Insulin cofactor",
+                                                   "mechanism":  "增强胰岛素受体活性"
+                                               },
+                                               {
+                                                   "name":  "Cinnamon Extract",
+                                                   "nameCN":  "肉桂提取物",
+                                                   "category":  "Insulin mimetic",
+                                                   "mechanism":  "模拟胰岛素作用，改善糖摄取"
+                                               },
+                                               {
+                                                   "name":  "Alpha Lipoic Acid (ALA)",
+                                                   "nameCN":  "α-硫辛酸",
+                                                   "category":  "Antioxidant / Insulin sensitizer",
+                                                   "mechanism":  "胰岛素敏感性，抗氧化(水脂双溶)"
+                                               },
+                                               {
+                                                   "name":  "Banaba Leaf Extract (Corosolic Acid)",
+                                                   "nameCN":  "大花紫薇提取物",
+                                                   "category":  "Blood sugar",
+                                                   "mechanism":  "科罗索酸促进葡萄糖转运体(GLUT4)转位"
+                                               },
+                                               {
+                                                   "name":  "Gymnema Sylvestre",
+                                                   "nameCN":  "武靴叶",
+                                                   "category":  "Blood sugar",
+                                                   "mechanism":  "抑制肠道糖吸收，促进胰岛素分泌",
+                                                   "note":  "阿育吠陀传统降糖草药"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "hydration_electrolyte",
+                           "name":  "水分补充与电解质 (Hydration \u0026 Electrolyte)",
+                           "description":  "Electrolyte replenishment, fluid balance, and hydration optimization",
+                           "marketNote":  "2024年主流渠道增速+32.8%，体量超体重管理/骨骼健康",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Potassium",
+                                                   "nameCN":  "钾",
+                                                   "category":  "Electrolyte",
+                                                   "growth":  "+414.8% YoY",
+                                                   "mechanism":  "细胞内主要阳离子，神经肌肉功能"
+                                               },
+                                               {
+                                                   "name":  "Taurine",
+                                                   "nameCN":  "牛磺酸",
+                                                   "category":  "Amino acid / Electrolyte",
+                                                   "growth":  "+179.2%",
+                                                   "mechanism":  "渗透压调节，细胞保护"
+                                               },
+                                               {
+                                                   "name":  "Sodium (Pink Salt / Sea Salt)",
+                                                   "nameCN":  "钠(粉盐/海盐)",
+                                                   "category":  "Electrolyte",
+                                                   "mechanism":  "细胞外主要阳离子，水分平衡"
+                                               },
+                                               {
+                                                   "name":  "Magnesium (as Citrate / Glycinate)",
+                                                   "nameCN":  "镁",
+                                                   "category":  "Electrolyte",
+                                                   "mechanism":  "300+酶辅助因子，肌肉/神经功能"
+                                               },
+                                               {
+                                                   "name":  "Coconut Water Powder",
+                                                   "nameCN":  "椰子水粉",
+                                                   "category":  "Natural electrolyte",
+                                                   "mechanism":  "天然电解质来源(钾/钠/镁)"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "detox_cleanse",
+                           "name":  "清洁排毒 (Cleanse \u0026 Detox)",
+                           "description":  "Detoxification support, heavy metal binding, and cleanse programs",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Probiotics",
+                                                   "nameCN":  "益生菌",
+                                                   "category":  "Gut detox",
+                                                   "growth":  "+2.4% (cleanse category)",
+                                                   "mechanism":  "结合/中和肠道毒素和重金属"
+                                               },
+                                               {
+                                                   "name":  "Spirulina / Blue-Green Algae",
+                                                   "nameCN":  "螺旋藻",
+                                                   "category":  "Superfood / Detox",
+                                                   "growth":  "+213%",
+                                                   "mechanism":  "重金属螯合，抗氧化"
+                                               },
+                                               {
+                                                   "name":  "Chlorella",
+                                                   "nameCN":  "小球藻",
+                                                   "category":  "Superfood / Detox",
+                                                   "mechanism":  "细胞壁结合重金属，叶绿素排毒"
+                                               },
+                                               {
+                                                   "name":  "Activated Charcoal",
+                                                   "nameCN":  "活性炭",
+                                                   "category":  "Adsorbent",
+                                                   "mechanism":  "非特异性吸附毒素/气体"
+                                               },
+                                               {
+                                                   "name":  "Dandelion Root",
+                                                   "nameCN":  "蒲公英根",
+                                                   "category":  "Herbal detox",
+                                                   "mechanism":  "利胆利尿，促进排毒"
+                                               },
+                                               {
+                                                   "name":  "Kombucha",
+                                                   "nameCN":  "康普茶",
+                                                   "category":  "Fermented detox",
+                                                   "growth":  "+704.7%",
+                                                   "mechanism":  "有机酸+益生菌促进肠道排毒"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "pet_health",
+                           "name":  "宠物健康 (Pet Health)",
+                           "description":  "Pet-specific supplement ingredients for joint, immune, skin, and cognitive health",
+                           "marketNote":  "北美宠物保健品2025年$224.8亿，2033年预计$431.4亿",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Glucosamine + Chondroitin",
+                                                   "nameCN":  "氨基葡萄糖+软骨素",
+                                                   "category":  "Joint health",
+                                                   "note":  "老年宠物关节健康刚需"
+                                               },
+                                               {
+                                                   "name":  "CBD (for Pets)",
+                                                   "nameCN":  "大麻二酚(宠物)",
+                                                   "category":  "Calmative / Anti-inflammatory",
+                                                   "trend":  "宠物关节炎/焦虑/抗炎，法规逐步放开"
+                                               },
+                                               {
+                                                   "name":  "Mushroom Complex (Reishi / Chaga / Turkey Tail)",
+                                                   "nameCN":  "蘑菇复合物",
+                                                   "category":  "Immune / Cognitive",
+                                                   "trend":  "宠物食品中免疫+认知方向增长"
+                                               },
+                                               {
+                                                   "name":  "Probiotics (Pet-specific strains)",
+                                                   "nameCN":  "宠物益生菌",
+                                                   "category":  "Gut health"
+                                               },
+                                               {
+                                                   "name":  "Omega-3 (Fish Oil)",
+                                                   "nameCN":  "鱼油",
+                                                   "category":  "Skin / Coat / Joint"
+                                               },
+                                               {
+                                                   "name":  "Turmeric / Curcumin",
+                                                   "nameCN":  "姜黄素",
+                                                   "category":  "Anti-inflammatory",
+                                                   "note":  "宠物关节抗炎方向"
+                                               }
+                                           ]
+                       },
+                       {
+                           "id":  "delivery_innovation",
+                           "name":  "递送技术创新 (Delivery Technology Innovation)",
+                           "description":  "Novel delivery systems improving bioavailability and consumer experience",
+                           "ingredients":  [
+                                               {
+                                                   "name":  "Liposomal Delivery",
+                                                   "nameCN":  "脂质体递送",
+                                                   "marketSize2025":  "~$8B globally",
+                                                   "applicableIngredients":  [
+                                                                                 "Curcumin",
+                                                                                 "NMN",
+                                                                                 "Glutathione",
+                                                                                 "Vitamin C",
+                                                                                 "CoQ10"
+                                                                             ],
+                                                   "advantage":  "提高脂溶性/不稳定成分的吸收率数倍至数十倍"
+                                               },
+                                               {
+                                                   "name":  "Nano-Emulsion",
+                                                   "nameCN":  "纳米乳化",
+                                                   "applicableIngredients":  [
+                                                                                 "CBD",
+                                                                                 "Curcumin",
+                                                                                 "CoQ10"
+                                                                             ],
+                                                   "advantage":  "将脂溶性成分制成水溶性纳米颗粒"
+                                               },
+                                               {
+                                                   "name":  "Gummy Format",
+                                                   "nameCN":  "软糖剂型",
+                                                   "trend":  "增长最快剂型，降低补充剂\u0027服药感\u0027",
+                                                   "applicableIngredients":  [
+                                                                                 "Melatonin",
+                                                                                 "ACV",
+                                                                                 "Multivitamin",
+                                                                                 "Collagen"
+                                                                             ]
+                                               },
+                                               {
+                                                   "name":  "Sachet / Powder Stick",
+                                                   "nameCN":  "条包/粉剂",
+                                                   "trend":  "即时饮用场景，电解质/蛋白质/功能饮品",
+                                                   "applicableIngredients":  [
+                                                                                 "Electrolytes",
+                                                                                 "Collagen",
+                                                                                 "Protein",
+                                                                                 "Greens"
+                                                                             ]
+                                               },
+                                               {
+                                                   "name":  "Time-Release / Sustained-Release",
+                                                   "nameCN":  "缓释/控释",
+                                                   "advantage":  "延长有效成分作用时间",
+                                                   "applicableIngredients":  [
+                                                                                 "Caffeine",
+                                                                                 "B-vitamins",
+                                                                                 "Melatonin"
+                                                                             ]
+                                               },
+                                               {
+                                                   "name":  "Sublingual / Oral Spray",
+                                                   "nameCN":  "舌下/口腔喷雾",
+                                                   "advantage":  "绕过肝脏首过效应，快速吸收",
+                                                   "applicableIngredients":  [
+                                                                                 "B12",
+                                                                                 "D3",
+                                                                                 "Melatonin",
+                                                                                 "CBD"
+                                                                             ]
+                                               }
+                                           ]
+                       }
+                   ],
+    "ingredientIndex":  {
+                            "note":  "按字母排序的全成分快速索引，含所属功效类别ID",
+                            "A":  [
+                                      {
+                                          "name":  "Activated Charcoal",
+                                          "categories":  [
+                                                             "detox_cleanse"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Akkermansia muciniphila",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Alpha Lipoic Acid (ALA)",
+                                          "categories":  [
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Alpha-GPC",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Apigenin",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Apple Cider Vinegar",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Artichoke Extract",
+                                          "categories":  [
+                                                             "digestive_gut_health",
+                                                             "liver_detox"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Ashwagandha",
+                                          "categories":  [
+                                                             "stress_mood_sleep",
+                                                             "mens_health",
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Astaxanthin",
+                                          "categories":  [
+                                                             "skin_beauty",
+                                                             "eye_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Astragalus Root",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      }
+                                  ],
+                            "B":  [
+                                      {
+                                          "name":  "Bacopa Monnieri",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Banaba Leaf Extract",
+                                          "categories":  [
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "BCAA / EAA",
+                                          "categories":  [
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Beetroot Extract",
+                                          "categories":  [
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Berberine",
+                                          "categories":  [
+                                                             "weight_management_metabolic",
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Bergamot Extract",
+                                          "categories":  [
+                                                             "cardiovascular"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Beta-Alanine",
+                                          "categories":  [
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Beta-Glucan",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Beta-Sitosterol",
+                                          "categories":  [
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Bilberry Extract",
+                                          "categories":  [
+                                                             "eye_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Biotin",
+                                          "categories":  [
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Black Cohosh",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Boswellia Serrata",
+                                          "categories":  [
+                                                             "joint_bone_mobility",
+                                                             "anti_inflammatory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Bromelain",
+                                          "categories":  [
+                                                             "respiratory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Butyrate",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      }
+                                  ],
+                            "C":  [
+                                      {
+                                          "name":  "CaAKG",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "CBD (for Pets)",
+                                          "categories":  [
+                                                             "pet_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Ceramides",
+                                          "categories":  [
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Chaga",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Chlorella",
+                                          "categories":  [
+                                                             "detox_cleanse"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Chondroitin Sulfate",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Chromium",
+                                          "categories":  [
+                                                             "weight_management_metabolic",
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Cinnamon Extract",
+                                          "categories":  [
+                                                             "weight_management_metabolic",
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Citrulline",
+                                          "categories":  [
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "CLA",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "CoQ10 (Ubiquinol)",
+                                          "categories":  [
+                                                             "cardiovascular",
+                                                             "skin_beauty",
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Cordyceps",
+                                          "categories":  [
+                                                             "cognitive_brain_health",
+                                                             "respiratory",
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Collagen Peptides",
+                                          "categories":  [
+                                                             "joint_bone_mobility",
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Coconut Water Powder",
+                                          "categories":  [
+                                                             "hydration_electrolyte"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Creatine",
+                                          "categories":  [
+                                                             "anti_aging_longevity",
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Curcumin",
+                                          "categories":  [
+                                                             "anti_inflammatory"
+                                                         ]
+                                      }
+                                  ],
+                            "D":  [
+                                      {
+                                          "name":  "DHEA",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "DIM",
+                                          "categories":  [
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Digestive Enzymes",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Dandelion Root",
+                                          "categories":  [
+                                                             "liver_detox",
+                                                             "detox_cleanse"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Dong Quai",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      }
+                                  ],
+                            "E":  [
+                                      {
+                                          "name":  "Echinacea",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Elderberry",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Electrolytes",
+                                          "categories":  [
+                                                             "hydration_electrolyte"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Eyebright",
+                                          "categories":  [
+                                                             "eye_health"
+                                                         ]
+                                      }
+                                  ],
+                            "F":  [
+                                      {
+                                          "name":  "5-HTP",
+                                          "categories":  [
+                                                             "weight_management_metabolic",
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Fisetin",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Folate (5-MTHF)",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Fucoxanthin",
+                                          "categories":  [
+                                                             "liver_detox"
+                                                         ]
+                                      }
+                                  ],
+                            "G":  [
+                                      {
+                                          "name":  "GABA",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Ginger Extract",
+                                          "categories":  [
+                                                             "anti_inflammatory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Ginkgo Biloba",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Glucosamine",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Glucomannan",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Glutathione",
+                                          "categories":  [
+                                                             "liver_detox"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Green Tea Extract (EGCG)",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Gymnema Sylvestre",
+                                          "categories":  [
+                                                             "blood_sugar_metabolic"
+                                                         ]
+                                      }
+                                  ],
+                            "H":  [
+                                      {
+                                          "name":  "HMB",
+                                          "categories":  [
+                                                             "sports_performance"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Huperzine A",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Hyaluronic Acid",
+                                          "categories":  [
+                                                             "joint_bone_mobility",
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Hovenia Dulcis",
+                                          "categories":  [
+                                                             "liver_detox"
+                                                         ]
+                                      }
+                                  ],
+                            "I":  [
+                                      {
+                                          "name":  "Inositol",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Iron",
+                                          "categories":  [
+                                                             "womens_health",
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Ivy Leaf Extract",
+                                          "categories":  [
+                                                             "respiratory"
+                                                         ]
+                                      }
+                                  ],
+                            "K":  [
+                                      {
+                                          "name":  "Kombucha",
+                                          "categories":  [
+                                                             "digestive_gut_health",
+                                                             "detox_cleanse"
+                                                         ]
+                                      }
+                                  ],
+                            "L":  [
+                                      {
+                                          "name":  "L-Theanine",
+                                          "categories":  [
+                                                             "cognitive_brain_health",
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Lactoferrin",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Lemon Balm",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Lion\u0027s Mane",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Lutein",
+                                          "categories":  [
+                                                             "eye_health"
+                                                         ]
+                                      }
+                                  ],
+                            "M":  [
+                                      {
+                                          "name":  "MCT Oil",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "MSM",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Maca Root",
+                                          "categories":  [
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Magnesium",
+                                          "categories":  [
+                                                             "anti_aging_longevity",
+                                                             "stress_mood_sleep",
+                                                             "hydration_electrolyte"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Magnesium L-Threonate",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Melatonin",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Milk Thistle",
+                                          "categories":  [
+                                                             "liver_detox"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Mulberry Leaf Extract",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      }
+                                  ],
+                            "N":  [
+                                      {
+                                          "name":  "NAC",
+                                          "categories":  [
+                                                             "immune_health",
+                                                             "liver_detox",
+                                                             "respiratory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Nextida GC",
+                                          "categories":  [
+                                                             "weight_management_metabolic"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "NMN",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "NMNH",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "NR",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      }
+                                  ],
+                            "O":  [
+                                      {
+                                          "name":  "Omega-3 (EPA/DHA)",
+                                          "categories":  [
+                                                             "cardiovascular",
+                                                             "anti_inflammatory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Oat Straw (Avena sativa)",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      }
+                                  ],
+                            "P":  [
+                                      {
+                                          "name":  "PEA (Palmitoylethanolamide)",
+                                          "categories":  [
+                                                             "anti_inflammatory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "PQQ",
+                                          "categories":  [
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Panax Ginseng",
+                                          "categories":  [
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Passionflower",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Phosphatidylserine",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Plant Sterols / Stanols",
+                                          "categories":  [
+                                                             "cardiovascular"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Polyphenols",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Postbiotics",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Prebiotic Fiber",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Probiotics",
+                                          "categories":  [
+                                                             "digestive_gut_health",
+                                                             "immune_health",
+                                                             "detox_cleanse"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Propolis",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Psyllium Husk",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Pterostilbene",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Pumpkin Seed Oil",
+                                          "categories":  [
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Pycnogenol",
+                                          "categories":  [
+                                                             "skin_beauty"
+                                                         ]
+                                      }
+                                  ],
+                            "Q":  [
+                                      {
+                                          "name":  "Quercetin",
+                                          "categories":  [
+                                                             "anti_aging_longevity",
+                                                             "immune_health",
+                                                             "respiratory"
+                                                         ]
+                                      }
+                                  ],
+                            "R":  [
+                                      {
+                                          "name":  "Red Clover Isoflavones",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Red Yeast Rice",
+                                          "categories":  [
+                                                             "cardiovascular"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Reishi",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Resveratrol (Trans-)",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Rhodiola Rosea",
+                                          "categories":  [
+                                                             "stress_mood_sleep",
+                                                             "energy_fatigue"
+                                                         ]
+                                      }
+                                  ],
+                            "S":  [
+                                      {
+                                          "name":  "Saffron Extract",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Saw Palmetto",
+                                          "categories":  [
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Shilajit",
+                                          "categories":  [
+                                                             "mens_health",
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Slippery Elm",
+                                          "categories":  [
+                                                             "digestive_gut_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "SOD",
+                                          "categories":  [
+                                                             "anti_inflammatory"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Sodium",
+                                          "categories":  [
+                                                             "hydration_electrolyte"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Spermidine",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Spirulina",
+                                          "categories":  [
+                                                             "immune_health",
+                                                             "detox_cleanse"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Strontium",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      }
+                                  ],
+                            "T":  [
+                                      {
+                                          "name":  "Tart Cherry Extract",
+                                          "categories":  [
+                                                             "stress_mood_sleep"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Taurine",
+                                          "categories":  [
+                                                             "sports_performance",
+                                                             "hydration_electrolyte"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Tongkat Ali",
+                                          "categories":  [
+                                                             "sports_performance",
+                                                             "mens_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Turmeric (in pet)",
+                                          "categories":  [
+                                                             "pet_health"
+                                                         ]
+                                      }
+                                  ],
+                            "U":  [
+                                      {
+                                          "name":  "UC-II",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Urolithin A",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      }
+                                  ],
+                            "V":  [
+                                      {
+                                          "name":  "Vitamin B12",
+                                          "categories":  [
+                                                             "cognitive_brain_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin B Complex",
+                                          "categories":  [
+                                                             "energy_fatigue"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin C",
+                                          "categories":  [
+                                                             "immune_health",
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin D3",
+                                          "categories":  [
+                                                             "immune_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin D3 + K2",
+                                          "categories":  [
+                                                             "joint_bone_mobility"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin E (Tocotrienols)",
+                                          "categories":  [
+                                                             "skin_beauty"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitamin K2 (MK-7)",
+                                          "categories":  [
+                                                             "anti_aging_longevity"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Vitex (Chasteberry)",
+                                          "categories":  [
+                                                             "womens_health"
+                                                         ]
+                                      }
+                                  ],
+                            "Z":  [
+                                      {
+                                          "name":  "Zeaxanthin",
+                                          "categories":  [
+                                                             "eye_health"
+                                                         ]
+                                      },
+                                      {
+                                          "name":  "Zinc",
+                                          "categories":  [
+                                                             "immune_health",
+                                                             "mens_health"
+                                                         ]
+                                      }
+                                  ]
+                        }
+}
