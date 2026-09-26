@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 
 import numpy as np
@@ -7,7 +8,7 @@ import pytest
 
 from predictor.model import (
     AMAZON_FEATURES, HORIZONS, MODEL_FEATURES, _build_samples, _candidate_predictions,
-    _features_at, _fit_candidates, _is_heldout, _select_models,
+    _calendar_origins, _features_at, _fit_candidates, _is_heldout, _select_models,
     _training_rows, _weekly_series, run_analysis,
 )
 
@@ -112,7 +113,10 @@ def test_empty_google_and_short_history_have_honest_fallback(tmp_path):
     assert result["backtests"] == []
     assert all(f["status"] == "baseline_only" and f["model"] == "last13mean" for f in forecasts)
     assert all(f["lower"] is None and f["upper"] is None for f in forecasts)
-    assert json.loads((tmp_path / "out" / "analysis.json").read_text(encoding="utf-8"))["schema_version"] == "1.0"
+    saved = json.loads((tmp_path / "out" / "analysis.json").read_text(encoding="utf-8"))
+    assert saved["schema_version"] == "2.0"
+    assert saved["provenance"]["amazon_provider"] == "sellersprite"
+    assert saved["provenance"]["provider_inference"] == "legacy_default"
     assert (tmp_path / "out" / "training_manifest.json").exists()
 
 
@@ -189,3 +193,82 @@ def test_end_to_end_backtest_intervals_are_only_later_test(tmp_path):
         assert (tmp_path / "out" / artifact["path"]).exists()
     paired = result["metrics"]["paired_comparisons"]
     assert any(p["comparison"] == "aba_ablation_matched_cases" and p["n"] > 0 for p in paired)
+
+
+def test_adding_earlier_history_does_not_shift_overlapping_origin_phase():
+    overlap_start = pd.Timestamp("2023-02-18")
+    end = pd.Timestamp("2026-08-29")
+    original = _calendar_origins(overlap_start, end)
+    extended = _calendar_origins(overlap_start - pd.Timedelta(weeks=17), end)
+    assert original.equals(extended[extended >= overlap_start])
+    assert all(origin.weekday() == 5 for origin in original)
+    assert set(np.diff(original).astype("timedelta64[D]").astype(int)) == {28}
+
+
+def test_providers_with_different_history_starts_share_strict_sealed_keys(tmp_path):
+    seller = synthetic_panel(2, 242, google=False)
+    seller["amazon_provider"] = "sellersprite"
+    sif = seller.loc[seller["week_end"] >= seller["week_end"].sort_values().unique()[2]].copy()
+    sif["amazon_provider"] = "sif"
+    assert seller["week_end"].min() != sif["week_end"].min()
+    assert seller["week_end"].max() == sif["week_end"].max()
+
+    seller_path, sif_path = tmp_path / "seller.csv", tmp_path / "sif.csv"
+    seller.to_csv(seller_path, index=False)
+    sif.to_csv(sif_path, index=False)
+    seller_result = run_analysis(seller_path, tmp_path / "seller-out")
+    sif_result = run_analysis(sif_path, tmp_path / "sif-out")
+
+    def sealed_keys(result):
+        return {
+            (row["ingredient_id"], row["origin"], row["target_end"], row["horizon_weeks"])
+            for row in result["backtests"]
+            if row["model"] == "last13mean" and row["split"].endswith("sealed_test")
+        }
+
+    seller_keys, sif_keys = sealed_keys(seller_result), sealed_keys(sif_result)
+    assert seller_keys
+    assert seller_keys == sif_keys
+    assert seller_result["methodology"]["calendar_anchor"] == "1970-01-03"
+    assert sif_result["methodology"]["calendar_anchor"] == "1970-01-03"
+
+
+def test_model_rejects_mixed_amazon_providers(tmp_path):
+    panel = synthetic_panel(2, 120, google=False)
+    panel["amazon_provider"] = np.where(panel["ingredient_id"] == "ingredient-0", "sellersprite", "sif")
+    path = tmp_path / "panel.csv"
+    panel.to_csv(path, index=False)
+    with pytest.raises(ValueError, match="exactly one"):
+        run_analysis(path, tmp_path / "out")
+
+
+def test_pure_sif_analysis_keeps_provider_at_top_and_per_ingredient(tmp_path):
+    panel = synthetic_panel(1, 80, google=False)
+    panel["amazon_provider"] = "sif"
+    path = tmp_path / "panel.csv"
+    panel.to_csv(path, index=False)
+    result = run_analysis(path, tmp_path / "out")
+    assert result["provenance"]["amazon_provider"] == "sif"
+    assert result["ingredients"][0]["diagnostics"]["amazon_provider"] == "sif"
+    assert any("SIF估计" in warning for warning in result["warnings"])
+    assert not any("卖家精灵估计" in warning for warning in result["warnings"])
+
+
+def test_panel_manifest_hash_and_provider_are_enforced(tmp_path):
+    dataset = tmp_path / "dataset"
+    dataset.mkdir()
+    panel = synthetic_panel(1, 80, google=False)
+    panel["amazon_provider"] = "sif"
+    path = dataset / "panel.csv"
+    panel.to_csv(path, index=False)
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest = {"schema_version": "2.0", "amazon_provider": "sif",
+                "provider_policy": "single_amazon_provider", "panel_sha256": digest,
+                "rows": len(panel), "ingredients": 1}
+    (dataset / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+    result = run_analysis(path, tmp_path / "out")
+    assert result["provenance"]["provider_inference"] == "manifest"
+    panel.loc[0, "searches"] += 1
+    panel.to_csv(path, index=False)
+    with pytest.raises(ValueError, match="SHA256"):
+        run_analysis(path, tmp_path / "tampered")

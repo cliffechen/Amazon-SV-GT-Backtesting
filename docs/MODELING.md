@@ -35,6 +35,8 @@
 
 ## 输出
 
-`run_analysis(panel_path, output_dir, catalog_path=None)` 写入 `analysis.json`。顶层backtests保留所有模型版本，单成分backtests展示早期验证最终选中版本及必要基线回退；早期图是选模后的回顾图，不冒充当时已选好该模型。metrics.summary按horizon/model/split汇总，paired_comparisons存匹配样本比较，selected_models记录各预测跨度所选模型。训练审计给出每次origin下的训练行数、族数、日期数、最大标签截止日。
+`run_analysis(panel_path, output_dir, catalog_path=None, panel_manifest_path=None)` 写入 schema 2.0 的 `analysis.json`。提供清单时，程序先核对面板 SHA-256、单一 Amazon 供应商策略和逐行来源；SellerSprite 与 SIF 不能混进同一训练表。顶层 `provenance` 记录供应商、来源数量、面板与清单哈希。顶层backtests保留所有模型版本，单成分backtests展示早期验证最终选中版本及必要基线回退；早期图是选模后的回顾图，不冒充当时已选好该模型。metrics.summary按horizon/model/split汇总，paired_comparisons存匹配样本比较，selected_models记录各预测跨度所选模型。训练审计给出每次origin下的训练行数、族数、日期数、最大标签截止日。
 
-同时写入 `training_manifest.json` 和 `models/*.joblib`。manifest记录输入与建模代码SHA256、Python/依赖版本、固定规则、组分配、训练审计、所选模型、区间校准来源、最终缩放参数与系数。joblib保存全部可拟合的最终共享模型，标明是否被选择；基线本身无需拟合，其每个成分的数值保存在analysis。使用相同数据、代码及依赖版本可复算，生成时间会改变。经验区间只用早期validation，不使用sealed-test校准。
+同时写入 `training_manifest.json` 和 `models/*.joblib`。manifest记录输入与建模代码SHA256、上游面板清单、Python/依赖版本、固定规则、组分配、训练审计、所选模型、区间校准来源、最终缩放参数与系数。joblib保存全部可拟合的最终共享模型，标明是否被选择；基线本身无需拟合，其每个成分的数值保存在analysis。使用相同数据、代码及依赖版本可复算，生成时间会改变。经验区间只用早期validation，不使用sealed-test校准。
+
+双供应商比较不会把搜索量相加或换算。报告只在两份分析的方法、成分身份和来源均可核对时，按 `(ingredient_id, horizon, split, origin, target_end, model)` 求交集。两家的绝对误差分别在各自目标口径内计算；由于量级和曲线平滑度不同，不能仅凭某家的 WAPE 更低就断言它更接近真实消费者搜索。

@@ -22,11 +22,14 @@ from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+from .common import read_json, sha256
+
 
 HORIZONS = (13, 26)
 MIN_HISTORY = 104
 ORIGIN_STEP = 4
 TRAIN_STEP = 4
+CALENDAR_ANCHOR = pd.Timestamp("1970-01-03")  # Saturday; fixes every 4-week grid globally.
 MIN_TRAIN_ROWS = 40
 MIN_TRAIN_GROUPS = 4
 MIN_TRAIN_ORIGINS = 4
@@ -50,7 +53,7 @@ ABLATIONS = {
     "google_ablation_with_aba_matched_cases": ("ridge_aba", "ridge_all"),
     "aba_ablation_with_google_matched_cases": ("ridge_google", "ridge_all"),
 }
-MODEL_VERSION = "ridge-demand-v1.1.0"
+MODEL_VERSION = "ridge-demand-v1.3.0"
 
 
 def _is_heldout(family_id: str) -> bool:
@@ -74,7 +77,22 @@ def _json_value(value: Any) -> Any:
     return value
 
 
-def _load_panel(panel_path: str | Path) -> pd.DataFrame:
+def _find_panel_manifest(panel_path: str | Path, manifest_path: str | Path | None = None):
+    panel_path = Path(panel_path)
+    candidates = ([Path(manifest_path)] if manifest_path else []) + [
+        panel_path.parent / "manifest.json", panel_path.with_suffix(".manifest.json")]
+    for candidate in candidates:
+        if candidate.exists():
+            manifest = read_json(candidate)
+            if manifest.get("schema_version") != "2.0":
+                raise ValueError("panel manifest must use schema_version 2.0")
+            if manifest.get("panel_sha256") != sha256(panel_path):
+                raise ValueError("panel SHA256 does not match its manifest")
+            return manifest, candidate
+    return None, None
+
+
+def _load_panel(panel_path: str | Path, manifest: dict | None = None) -> pd.DataFrame:
     panel = pd.read_csv(panel_path, dtype={"ingredient_id": str, "family_id": str})
     required = {"ingredient_id", "week_end", "searches"}
     if not required.issubset(panel):
@@ -108,16 +126,45 @@ def _load_panel(panel_path: str | Path) -> pd.DataFrame:
         raise ValueError("an ingredient_id must identify one marketplace")
     if len(panel) and set(panel["marketplace"]) != {"US"}:
         raise ValueError("v1 shared model requires the US marketplace only")
+    if "amazon_provider" in panel and "amazon_source" in panel:
+        left = panel["amazon_provider"].fillna("").astype(str).str.casefold()
+        right = panel["amazon_source"].fillna("").astype(str).str.casefold()
+        if not left.equals(right):
+            raise ValueError("amazon_provider and legacy amazon_source disagree")
+    if "amazon_provider" not in panel:
+        if "amazon_source" in panel:
+            panel["amazon_provider"] = panel["amazon_source"]
+        elif manifest:
+            panel["amazon_provider"] = manifest.get("amazon_provider")
+        else:
+            panel["amazon_provider"] = "sellersprite"
+    panel["amazon_provider"] = panel["amazon_provider"].fillna("").astype(str).str.casefold()
+    providers = set(panel["amazon_provider"])
+    if not providers <= {"sellersprite", "sif"} or len(providers) != 1:
+        raise ValueError("modeling requires exactly one supported Amazon provider per panel")
+    if panel.groupby("ingredient_id")["amazon_provider"].nunique().gt(1).any():
+        raise ValueError("an ingredient cannot mix Amazon providers")
+    if manifest:
+        provider = next(iter(providers))
+        if manifest.get("amazon_provider") != provider:
+            raise ValueError("panel provider does not match its manifest")
+        if manifest.get("provider_policy") != "single_amazon_provider":
+            raise ValueError("panel manifest does not declare the single-provider policy")
+        if manifest.get("rows") != len(panel) or manifest.get("ingredients") != panel["ingredient_id"].nunique():
+            raise ValueError("panel row or ingredient counts do not match its manifest")
     return panel.sort_values(["ingredient_id", "week_end"]).reset_index(drop=True)
 
 
 def _weekly_series(panel: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    if "amazon_provider" not in panel:
+        panel = panel.copy()
+        panel["amazon_provider"] = "sellersprite"
     series = {}
     for ingredient_id, group in panel.groupby("ingredient_id", sort=True):
         frame = group.set_index("week_end").sort_index()
         dates = pd.date_range(frame.index.min(), frame.index.max(), freq="W-SAT")
         frame = frame.reindex(dates)
-        for field in ("ingredient_id", "keyword", "name_cn", "marketplace", "family_id"):
+        for field in ("ingredient_id", "keyword", "name_cn", "marketplace", "family_id", "amazon_provider"):
             frame[field] = group[field].iloc[0]
         series[str(ingredient_id)] = frame
     return series
@@ -196,6 +243,19 @@ def _build_samples(series: dict[str, pd.DataFrame]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _calendar_origins(start: pd.Timestamp, end: pd.Timestamp,
+                      step_weeks: int = ORIGIN_STEP) -> pd.DatetimeIndex:
+    """Return Saturdays on one absolute grid, independent of history start dates."""
+    if type(step_weeks) is not int or step_weeks < 1:
+        raise ValueError("step_weeks must be a positive integer")
+    start, end = pd.Timestamp(start).normalize(), pd.Timestamp(end).normalize()
+    if end < start:
+        return pd.DatetimeIndex([])
+    saturdays = pd.date_range(start, end, freq="W-SAT")
+    week_number = (saturdays - CALENDAR_ANCHOR).days // 7
+    return saturdays[week_number % step_weeks == 0]
+
+
 def _training_rows(samples: pd.DataFrame, origin: pd.Timestamp, horizon: int,
                    include_heldout: bool = False) -> pd.DataFrame:
     """No label whose last week is after the prediction origin is available."""
@@ -205,7 +265,7 @@ def _training_rows(samples: pd.DataFrame, origin: pd.Timestamp, horizon: int,
     if not include_heldout:
         mask &= ~samples["heldout"]
     # Fixed epoch, independent of future observations or how long a download is.
-    week_number = (samples["origin"] - pd.Timestamp("1970-01-03")).dt.days // 7
+    week_number = (samples["origin"] - CALENDAR_ANCHOR).dt.days // 7
     mask &= week_number % TRAIN_STEP == 0
     return samples.loc[mask].copy()
 
@@ -357,9 +417,13 @@ def _recent_baseline(frame: pd.DataFrame, as_of: pd.Timestamp) -> float | None:
 
 
 def run_analysis(panel_path: str | Path, output_dir: str | Path,
-                 catalog_path: str | Path | None = None) -> dict:
+                 catalog_path: str | Path | None = None,
+                 panel_manifest_path: str | Path | None = None) -> dict:
     """Run fixed rolling backtests, select on early validation, forecast at as_of."""
-    panel = _load_panel(panel_path)
+    panel_manifest, resolved_manifest_path = _find_panel_manifest(panel_path, panel_manifest_path)
+    panel = _load_panel(panel_path, panel_manifest)
+    amazon_provider = str(panel["amazon_provider"].iloc[0])
+    provider_inference = "manifest" if panel_manifest else "legacy_default"
     series = _weekly_series(panel)
     samples = _build_samples(series)
     as_of = panel["week_end"].max() if len(panel) else None
@@ -368,7 +432,9 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
     training_audit = []
     if not samples.empty:
         earliest = panel["week_end"].min() + pd.Timedelta(weeks=MIN_HISTORY + max(HORIZONS) - 1)
-        origins = pd.date_range(earliest, as_of - pd.Timedelta(weeks=min(HORIZONS)), freq=f"{ORIGIN_STEP}W-SAT")
+        origins = _calendar_origins(
+            earliest, as_of - pd.Timedelta(weeks=min(HORIZONS)), ORIGIN_STEP
+        )
         for origin in origins:
             current = samples.loc[samples["origin"] == origin]
             for horizon in HORIZONS:
@@ -466,10 +532,11 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
             "forecasts": forecasts, "backtests": selected_rows,
             "diagnostics": {"history_weeks": len(frame), "observed_weeks": int(frame["searches"].notna().sum()),
                             "missing_weeks": int(frame["searches"].isna().sum()),
-                            "google_weeks": int(frame["google_trend"].notna().sum()),
-                            "rank_weeks": int(frame["rank"].notna().sum()),
-                            "family_id": first["family_id"], "heldout": _is_heldout(first["family_id"]),
-                            "as_of_eligible": features is not None, "latest_week": frame.index.max()},
+                             "google_weeks": int(frame["google_trend"].notna().sum()),
+                             "rank_weeks": int(frame["rank"].notna().sum()),
+                             "family_id": first["family_id"], "heldout": _is_heldout(first["family_id"]),
+                             "amazon_provider": first["amazon_provider"],
+                             "as_of_eligible": features is not None, "latest_week": frame.index.max()},
         })
     catalog = []
     if catalog_path and Path(catalog_path).exists():
@@ -479,9 +546,11 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
         if item.get("selected") and str(item.get("id")) not in present:
             ingredients.append({"id": item["id"], "keyword": item.get("keyword", ""), "name_cn": item.get("name_cn", ""),
                                 "marketplace": "US", "history": [], "forecasts": [_empty_forecast(h) for h in HORIZONS],
-                                "backtests": [], "diagnostics": {"history_weeks": 0, "missing_weeks": 0, "reason": "no_source_data"}})
+                                "backtests": [], "diagnostics": {"history_weeks": 0, "missing_weeks": 0,
+                                "amazon_provider": amazon_provider, "reason": "no_source_data"}})
+    provider_label = "卖家精灵" if amazon_provider == "sellersprite" else "SIF"
     warnings = [
-        "预测目标是卖家精灵估计的亚马逊搜索次数，不是销量、独立人数或投资回报。",
+        f"预测目标是{provider_label}估计的亚马逊搜索次数，不是销量、独立人数或投资回报。",
         "历史数据及Google指数为本次下载的修订后快照，无法证明历史当时已能取得相同数值；本回测不是完整的实时历史复原。",
         "Google字段按数据契约保守滞后一周；来源周边界映射仍待官方确认。",
         "80%区间来自较早滚动验证的经验残差，样本存在跨词及时间相关性，不保证未来80%覆盖；以后期留出覆盖率检验。",
@@ -491,6 +560,8 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
         "PPC、ABA集中度、TikTok及新闻暂不进入需求预测；ABA排名通过独立消融测试增益，搜索量与排名可能同源相关，不能视为两份独立需求证据。",
         "后期测试不参与自动选模或区间校准；开发中已查看后期结果核验流程，它不是从未查看过的独立盲测。",
     ]
+    if amazon_provider == "sif":
+        warnings.append("本次模型完全使用SIF亚马逊搜索量口径；其绝对量不能与卖家精灵结果直接相加或比较。")
     if not backtests:
         warnings.append("可用历史不足以完成规定的滚动回测；当前仅能展示历史及保守基线，不能报告预测准确率。")
     for horizon in HORIZONS:
@@ -511,12 +582,22 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
     if series and not any(_is_heldout(str(f["family_id"].iloc[0])) for f in series.values()):
         warnings.append("本批成分未落入固定留组桶，尚不能评估新成分泛化能力。")
     result = _json_value({
-        "schema_version": "1.0", "generated_at": datetime.now(timezone.utc).isoformat(),
+        "schema_version": "2.0", "generated_at": datetime.now(timezone.utc).isoformat(),
         "as_of": as_of, "scope": "美国站营养补充剂成分词；未来13/26周平均每周估计搜索量",
+        "provenance": {
+            "amazon_provider": amazon_provider,
+            "provider_counts": {amazon_provider: int(panel["ingredient_id"].nunique())},
+            "provider_policy": "single_amazon_provider",
+            "provider_inference": provider_inference,
+            "panel_sha256": sha256(panel_path),
+            "panel_manifest_path": str(resolved_manifest_path.resolve()) if resolved_manifest_path else None,
+            "panel_manifest_sha256": sha256(resolved_manifest_path) if resolved_manifest_path else None,
+        },
         "methodology": {
             "target": "next_13_or_26_week_mean_estimated_amazon_searches", "baseline": "last13mean",
             "horizons_weeks": list(HORIZONS), "min_history_weeks": MIN_HISTORY,
             "origin_step_weeks": ORIGIN_STEP, "training_step_weeks": TRAIN_STEP,
+            "calendar_anchor": CALENDAR_ANCHOR,
             "sealed_test_start": test_start, "selection": "early_validation_only_min_5pct_wape_improvement",
             "group_holdout": "sha256(family_id) first 8 hex modulo 5 equals 0",
             "features": {"amazon": AMAZON_FEATURES, "google": GOOGLE_FEATURES, "aba": ABA_FEATURES},
@@ -539,9 +620,9 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
             relative_path = Path("models") / f"{name}_{horizon}.joblib"
             artifact_path = destination / relative_path
             joblib.dump({"model_version": MODEL_VERSION, "horizon_weeks": horizon,
-                         "model": name, "features": list(columns), "estimator": estimator,
-                         "target_transform": "log1p(future_mean)-log1p(last13mean)",
-                         "as_of": result["as_of"]}, artifact_path)
+                          "model": name, "features": list(columns), "estimator": estimator,
+                          "target_transform": "log1p(future_mean)-log1p(last13mean)",
+                          "as_of": result["as_of"], "amazon_provider": amazon_provider}, artifact_path)
             artifacts.append({"path": relative_path.as_posix(), "model": name, "horizon_weeks": horizon,
                               "selected": selected[str(horizon)]["model"] == name,
                               "sha256": hashlib.sha256(artifact_path.read_bytes()).hexdigest()})
@@ -553,8 +634,11 @@ def run_analysis(panel_path: str | Path, output_dir: str | Path,
     manifest = _json_value({
         "model_version": MODEL_VERSION, "generated_at": result["generated_at"], "as_of": as_of,
         "source": {"panel_path": str(Path(panel_path).resolve()),
-                   "panel_sha256": hashlib.sha256(Path(panel_path).read_bytes()).hexdigest(),
-                   "catalog_sha256": hashlib.sha256(Path(catalog_path).read_bytes()).hexdigest() if catalog_path and Path(catalog_path).exists() else None,
+                    "panel_sha256": hashlib.sha256(Path(panel_path).read_bytes()).hexdigest(),
+                    "panel_manifest_path": str(resolved_manifest_path.resolve()) if resolved_manifest_path else None,
+                    "panel_manifest_sha256": sha256(resolved_manifest_path) if resolved_manifest_path else None,
+                    "amazon_provider": amazon_provider,
+                    "catalog_sha256": hashlib.sha256(Path(catalog_path).read_bytes()).hexdigest() if catalog_path and Path(catalog_path).exists() else None,
                    "model_code_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},
         "runtime": {"python": platform.python_version(), **{name: importlib.metadata.version(name)
                     for name in ("numpy", "pandas", "scikit-learn", "joblib")}},

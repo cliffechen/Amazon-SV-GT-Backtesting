@@ -7,8 +7,11 @@ __pycache__/
 .env.*
 !.env.example
 config/budget.json
+config/provider_budgets.json
+config/providers.json
 data/budget.sqlite*
 data/raw/
+data/derived/
 data/processed/
 data/auxiliary/
 data/*_plan.json

@@ -1,126 +1,129 @@
 # Amazon-SV-GT-Backtesting
 
-把亚马逊站内搜索量（**SV，Search Volume**）和 Google 趋势（**GT，Google Trends**）放在一起，研究一个成分相关的需求未来会怎样变化，再用过去的数据检验这个方法到底靠不靠谱。
+这是一个用于研究 Amazon 美国站成分关键词需求的回测系统。它把 Amazon 站内搜索量、ABA 排名和 Google Trends 对齐到周，再站到过去反复预测后面的 13 周或 26 周，最后把预测与实际历史比较。
 
-目前预测的是 **Amazon 美国站的关键词搜索需求**，新闻模块面向北美。搜索需求不等于产品销量、利润，更不是“必成爆款”的承诺。
+它回答的是：“这个关键词的搜索需求可能往哪里走，过去用同样方法预测得准不准？”它不把搜索量当销量，也不承诺某个产品会成为爆款。
 
-**先说结果：程序已经能跑，但第一批回测还没有证明模型能稳定超过简单方法。** 报告会把失败结果一起展示，不只挑好看的曲线。
+## 现在已经做到什么
 
-## 用大白话讲，方法是什么？
+- 52 个经过人工复核的核心成分关键词，保留同义词和成分族关系；
+- SellerSprite 与 SIF 两套 Amazon 历史完全分开存储、建表、训练和发布；
+- 默认使用 SellerSprite，SIF 作为同规则复算与口径对照；
+- Amazon 搜索量、ABA 排名和 Google Trends 统一成周数据；
+- 13 周和 26 周滚动回测、时间封存测试、未见成分族测试；
+- 最近均值、去年同期和固定 Ridge 模型同场比较；
+- 供应商预算账本、失败隔离、断点恢复、原始响应和 SHA-256 来源清单；
+- 自包含的中文 HTML 报告，断网也能看图、切换成分和检查回测；
+- 每次正式运行写入独立目录，完整生成后才更新 latest 指针。
 
-### 1. 先确定我们研究的是哪个词
+当前没有把 PPC、ABA 集中度、TikTok 热度或新闻直接放进需求模型。原因是项目里还没有足够长、口径稳定、能按历史时点复原的序列。它们适合先做辅助决策；拿到合格历史后，再用同样的封存回测判断是否真的增加预测价值。
 
-例如研究尿石素 A，就使用美国站的 `urolithin a`。中文名、英文别名、不同剂型不能随便算成几个完全独立的成分。相关查询通过 `family_id` 归组，防止同一个东西一边当练习题、一边当考试题。
+## 方法论，用大白话解释
 
-`ingredient_db.json` 是**候选成分知识库**，包含 22 类、184 条记录。里面有重复、宠物用途、剂型技术，以及未经核实的市场描述。它能帮助列研究名单，但不是可以直接训练的历史数据。首批人工核对了 40 个核心查询词。
+### 1. 先把研究对象说清楚
 
-### 2. 把不同来源放到同一张周表里
+例如尿石素 A 使用 `urolithin a`。每个成分都有稳定 ID、成分族和两家供应商的查询词。`magnesium` 与 `magnesium l threonate` 可以是两个查询，但属于同一个成分族；做未见成分测试时必须一起留出，避免把近亲词一边当练习题、一边当考试题。
 
-| 数据 | 大白话解释 | 当前用途 |
+`ingredient_db.json` 是候选知识库。真正可进入研究的 52 个映射在 `config/catalog_mappings.json`，每次构建目录都会记录该文件的哈希。
+
+### 2. 不把不同单位硬加在一起
+
+| 数据 | 含义 | 在模型中的用途 |
 |---|---|---|
-| Amazon 搜索量 | 一个词一周被搜索多少次；使用卖家精灵的估计值 | 主要预测目标和历史特征 |
-| ABA 排名 | 这个词相对其他词有多热门，数字越小越靠前 | 检查是否有额外预测帮助 |
-| Google 趋势 | 在 Google 上的相对热度，范围 0–100 | 检查站外关注是否有帮助 |
-| PPC、ABA 集中度 | 广告建议出价、头部商品的点击和购买份额 | 当前只作竞争参考 |
-| 新闻与品牌动态 | 最近发生了什么、品牌在推广什么 | 当前只作调研背景 |
+| Amazon 搜索量 | 供应商估计的每周站内搜索次数 | 预测目标和主要历史特征 |
+| ABA 排名 | 关键词在 Amazon 搜索中的相对位置，数字越小越靠前 | 候选特征，必须通过样本外回测 |
+| Google Trends | 0–100 的相对热度 | 候选站外特征，不能当搜索次数 |
+| PPC、ABA 集中度 | 广告成本和头部商品份额 | 当前只作竞争参考 |
+| 新闻、社媒 | 事件和消费者教育线索 | 当前只作解释与调研线索 |
 
-**这些数字不能直接相加。** Google 的 80 不等于 80 次搜索，ABA 排名也不是搜索量。模型比较的是各自过去的水平、变化和波动，不是拍脑袋设置“亚马逊占 60%、Google 占 40%”。
+程序不会设置“Amazon 60%、Google 40%”这种主观权重。每类数据先按自己的历史尺度做特征，再看它在没见过的数据上是否比简单基准更准。
 
-目前统一使用周数据。Amazon 标签按周六结束；Google 的周边界仍需供应商进一步确认，因此按披露的映射规则处理，再额外滞后一周。缺失数据保留缺失，不填成“需求为零”。原始响应按采集日期保存，以便追查口径变化。
+### 3. 统一时间口径
 
-### 3. 明确要预测什么
+- Amazon 使用周六结束的完整周；
+- SIF 返回周日标签，映射到同一周的周六结束日，即加 6 天；
+- Google 周界仍待供应商进一步确认，当前先映射到周六，再额外滞后一周；
+- 缺失值保留为空，不能把“没有数据”写成“需求为 0”。
 
-目标是：**从最后一个有数据的周开始，未来 13 周或 26 周的平均每周搜索量**，大约对应 3 个月和 6 个月。
+所有原始历史都是本次下载到的修订后快照。供应商可能追溯修改历史，所以回测能防止普通的时间穿越，却不能还原几年前当时屏幕上究竟显示了什么。从现在开始持续留存快照，才能逐步形成真正的 point-in-time 验证。
 
-例如“未来 13 周平均每周 2 万次”，说的是总体平均水平，不是每周恰好 2 万次，也不是销量 2 万件。增长幅度与过去 13 周均值比较。来源数据落后于今天时，预测窗口也从数据截止周起算，不假装数据已经更新到今天。
+### 4. 遮住未来，反复考试
 
-### 4. 把未来遮住，反复模拟考试
+在每个历史预测起点，模型只能看到这个日期及以前的数据。它预测后面 13 周或 26 周的平均每周搜索量，等目标窗口完整发生后再打分。预测起点每 4 周移动一次。
 
-假设站在过去某个周末：
+最后 52 周作为封存测试，前面的数据负责选模型；另外按 `family_id` 留出一组成分，检查模型换到没见过的成分族后是否还能工作。旧训练样本的答案也必须在当次预测前已经发生，避免偷偷使用未来标签。
 
-1. 只让模型看这个周末及以前的数据。
-2. 让它预测后面 13 周或 26 周的平均搜索量。
-3. 再揭开真实数据，比较错了多少。
-4. 把时间向后移动，反复做同样的事。
+预测窗口会互相重叠，相关成分也会受到同一市场事件影响。因此几百行回测记录不等于几百次完全独立的实验。
 
-这叫**滚动回测**。当前每 4 周做一次。预测窗口会重叠，所以 300 条记录不等于 300 次完全独立的考试。
+### 5. 先打败简单方法
 
-还有一个容易漏掉的地方：用来训练的旧预测题，其后续答案也必须在预测当天之前已经发生。不能把还没发生的答案偷偷拿去训练。所有成分遵守同一个历史截止日期。
+系统先测试两个容易理解的基准：
 
-### 5. 先和两个朴素的方法比
+- `last13mean`：未来大致等于最近 13 周均值；
+- `seasonal`：未来大致等于去年同期。
 
-- **最近均值法**：未来大致和最近 13 周一样。
-- **去年同期法**：未来大致和去年对应的那段时间一样。
+然后才测试固定的 Ridge 模型：只看 Amazon、加入 ABA、加入 Google、同时加入 ABA 与 Google。特征、正则强度和选模门槛事先固定。候选模型只有在相同验证案例上比最近均值的 WAPE 至少相对改善 5%，才允许被选中。
 
-然后尝试带约束的回归模型（Ridge）：先只看 Amazon，再分别加入 Google、ABA，最后一起加入。它会约束系数，减少为了贴合旧数据而做出夸张解释的机会。
+WAPE 是“总共预测错多少，除以总共真实有多少”，越低越好。`100% - WAPE` 不能称为准确率。报告同时给出单成分结果、方向准确率、普通封存测试和未见成分族测试。
 
-新增数据源必须在**同样一批考试题**上比较，才能说有没有帮助。把更多列塞进去，或者看到两条曲线一起涨，不等于更准，也不代表因果关系。
+### 6. 为什么成分要多，但不能盲目堆数量
 
-### 6. 防止“练习题很好，换题就不会”
+更多成分可以增加上涨、下跌、平稳、季节性和突发尖峰等案例，对共享模型有帮助。前提是关键词含义明确、历史足够长、周口径一致，而且不能把同义词伪装成独立样本。
 
-这就是过拟合。项目采用这些检查：
+只收集已经走红的成分会产生选择偏差；只增加相似成分会让样本数量看起来很多，实际信息没有增加。当前 52 个成分是一个可运行的起点，仍需继续补充不同品类和持续前瞻验证。
 
-- 用较早的验证结果选方法，再用后面一段时间检验；后期结果不参与自动选模或区间校准。
-- 留出一组成分族，训练时不让模型见到，看看换成分能不能预测。
-- 特征、参数和选择门槛尽量简单固定，不根据后期成绩反复调到好看。
-- 标准化只使用训练数据；缺失值、未来数据和当前新闻不能偷偷混进历史特征。
+## 2026-09-26 已验证运行
 
-**多拿一些成分有帮助，但不是越多越准。** 要有不同类别、增长、下降、平稳的案例，还要有足够长的历史。如果只挑已经火了的成分，或者把同义词算成独立样本，效果会被高估。当前候选库偏向新兴成分，仍然有选择偏差。
+本次运行的数据截止周是 2026-09-19。可分享的审计摘要在 `docs/results/2026-09-26.json`，其中没有逐周付费历史。
 
-## 第一批真实结果
-
-下面是 2026-09-23 首次运行记录，数据截止周为 2026-09-12；不是实时更新的成绩。
-
-| 检验 | 13 周 | 26 周 |
+| 项目 | SellerSprite 主口径 | SIF 对照口径 |
 |---|---:|---:|
-| 较早验证选择的方法 | 最近 13 周均值 | 去年同期均值 |
-| 所选方法的后期加权误差 | 33.20% | 50.16% |
-| 同期最近均值法的误差 | 33.20% | 34.53% |
-| 所选方法对未见成分的后期误差 | 20.33% | 27.99% |
-| 未见成分上的最近均值法误差 | 20.33% | 21.88% |
+| 可用 Amazon 历史 | 52 个成分，12,353 行 | 51 个成分，12,373 行 |
+| 本次新缓存 | 52 个成分全部重新采集 | 2 个成分来自完整新批次，其余复用已核验兼容缓存 |
+| 13 周自动选择 | 最近 13 周均值 | 最近 13 周均值 |
+| 13 周封存测试 WAPE | 24.64% | 17.40% |
+| 26 周自动选择 | 去年同期 | 最近 13 周均值 |
+| 26 周封存测试 WAPE | 33.94% | 19.94% |
 
-加权误差（WAPE）就是“所有预测错的量加起来，除以所有真实搜索量”，**越小越好**。不能把 `100% − 误差` 叫作准确率。它更偏重搜索量大的词，所以还要结合单成分表现看。
+这些百分比只能在各自供应商口径内解释。SIF 搜索量曲线更平滑时，WAPE 天然可能更低，这不证明它更接近真实搜索次数。
 
-26 周方法在后期比简单基准更差。即使某个词显示很大的增长预测，也只能作为探索线索。报告区间来自较早预测误差的经验分布，不保证未来有 80% 的覆盖率，更不是成为爆款的概率。
+SellerSprite 的 26 周结果给出了很有价值的反例：去年同期法在较早验证期达到预设改善门槛，但在封存测试中 WAPE 为 33.94%，明显差于同批最近均值基准的 24.07%。系统保留这个失败结果，不根据后期成绩回头换模型。它说明过拟合和市场结构变化确实存在，报告里的 3–6 个月数值应作为调研线索，而不是自动选品指令。
 
-另外，现在下载的旧数据可能已经被供应商修订，无法完全复原过去当时能看到什么；开发时也已查看后期成绩，不能称为从未看过的盲测。后续需要持续保存快照并做前瞻验证。详见[详细方法](docs/MODELING.md)和[首批验证记录](docs/FIRST_RUN.md)。
+双源报告对 51 个成分做了严格身份与来源核对。共同的最近均值基准在普通封存测试中得到 440 个 13 周配对窗口和 308 个 26 周配对窗口；未见成分族另有 70 / 49 个配对窗口。配对键包含成分、预测跨度、评估集、预测起点、目标结束日和模型，不用“日期差不多”的记录凑数。
 
-## 它以什么形式运行？
+本轮 SIF 预算上限为 11 个批次。旧校验器在保存前拒绝了 10 个含完全一致重复周的已付费响应，这 10 份原响应没有被旧流程保留下来；最后一个批次已从隔离区离线重验并恢复，未再次计费。账本和失败记录被保留，项目没有擅自增加额度。因此当前结果不能宣称“两家都在同一天完成了 52 个词的全量新采集”。
 
-- **Skill**：告诉 Codex 怎样采集、查预算、运行程序和解释结果，是操作说明。
-- **Python**：清洗数据、拟合、回测和生成报告；预测数字由程序计算。
-- **HTML**：选择成分、拖动时间条、切换 13/26 周、比较预测和实际、筛选新闻。图表程序和数据已内嵌，不需要另装前端框架。
+这也意味着当前 SIF 的用途主要是历史回测对照：49 份兼容缓存截止 2026-09-12，只有新恢复的 `vitamin d3` 和 `zinc` 延伸到 2026-09-19。为了避免不同成分使用不同“今天”，模型不会用较旧截止周冒充最新周预测；因此多数 SIF 成分当前显示数据不足。SellerSprite 主报告的 52 个成分都已更新到同一个最新周，不受这个缺口影响。
 
-在已配置好的 Codex 中可以说：
+## 系统以什么形式交付
 
-> 用 $ingredient-forecast 查看尿石素 A 的预测和 Timeline 近三个月动态，优先使用缓存。
+核心系统是 Python 项目，HTML 是查看结果的界面，Skill 是可选的操作说明：
 
-Skill 在 [skills/ingredient-forecast/SKILL.md](skills/ingredient-forecast/SKILL.md)。克隆仓库不会自动安装它，需要放入自己的技能目录。文件保留原开发机器的默认路径；换电脑时，要明确告诉 Codex 使用当前克隆目录，或修改这个默认路径。
+- **Python** 负责采集校验、数据对齐、建模、回测和生成报告；
+- **HTML** 负责选择成分、查看 13/26 周结果、历史回测、竞争参考和来源审计；
+- **Skill** 告诉 Codex 按什么顺序查预算、复用缓存、运行程序和解释限制。
 
-**Python 不会自动继承 Codex 的 MCP 登录。** 采集新数据需要已连接的卖家精灵 MCP；也可以按[数据结构](docs/CONTRACT.md)导入自己合法取得的历史数据。
+所以 Skill 不适合作为模型本体。即使没有 Skill，只要配置好 Python 环境和自己的数据，程序仍能运行。Skill 位于 `skills/ingredient-forecast/SKILL.md`，本机 Codex 使用的版本位于个人技能目录。
 
 ## 运行依赖
 
-| 依赖 | 用途 | 要求 |
-|---|---|---|
-| Python | 运行后端 | 推荐 3.12，首批验证为 3.12.10 |
-| NumPy、pandas | 数值计算、整理周表 | 随依赖文件安装 |
-| scikit-learn、SciPy | 回归模型与数值运算 | 随依赖文件安装 |
-| Plotly | 生成交互图表 | 随依赖文件安装 |
-| requests | HTTP 工具依赖 | 随依赖文件安装 |
-| pytest | 自动检查 | 随依赖文件安装 |
-| Node.js | 执行报告 JavaScript 的一项测试 | 可选；不装会跳过该测试，日常报告不依赖 Node |
-| 现代浏览器 | 查看 HTML | Edge、Chrome 等 |
-| 卖家精灵账号及 MCP | 获取新 Amazon / Google 数据 | 只有采集时需要，可能消耗点数 |
-| 联网搜索工具 | 搜索并核验新新闻 | 只有更新新闻时需要 |
+| 依赖 | 用途 |
+|---|---|
+| Python 3.11+ | 运行全部后端；当前环境使用 Python 3.12 |
+| NumPy、pandas | 数值计算和周表整理 |
+| scikit-learn、SciPy | Ridge 模型和指标 |
+| Plotly | 把交互图表内嵌进 HTML |
+| requests | MCP HTTP/SSE 客户端 |
+| pytest | 自动测试 |
+| Node.js，可选 | 检查报告内嵌 JavaScript；不影响日常查看 |
+| Edge / Chrome 等现代浏览器 | 打开离线报告 |
+| SellerSprite / SIF MCP 账号 | 只有采集新数据时需要，可能消耗额度 |
 
-`requirements-lock.txt` 固定了已验证的主要依赖版本，不是包含全部传递依赖的完整环境锁。`pyproject.toml` 声明最低 Python 3.11，但复现这批固定依赖建议使用已验证的 Python 3.12。无需 GPU；预算账本使用 Python 自带的 SQLite，不需要数据库服务器。
+不需要 GPU，也不需要数据库服务器；预算账本使用 Python 自带的 SQLite。
 
-## 第一次在新电脑运行
+## 安装与检查
 
-以下以 Windows PowerShell 为例，在项目根目录执行。Mac/Linux 将 `.venv\Scripts\python.exe` 换成 `.venv/bin/python`；附带的 `.ps1` 脚本是 Windows 用法。
-
-### 1. 克隆、安装、检查
+Windows PowerShell：
 
 ```powershell
 git clone https://github.com/cliffechen/Amazon-SV-GT-Backtesting.git
@@ -128,90 +131,118 @@ cd Amazon-SV-GT-Backtesting
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
 .\.venv\Scripts\python.exe -m pytest -q
-```
-
-私有仓库需要对应 GitHub 权限。代码可以直接从项目根目录运行，无需安装成系统命令。
-
-### 2. 创建自己的预算配置和成分目录
-
-```powershell
-if (-not (Test-Path config/budget.json)) {
-    Copy-Item config/budget.example.json config/budget.json
-}
 .\.venv\Scripts\python.exe -m predictor audit
-.\.venv\Scripts\python.exe -m predictor budget
 ```
 
-模板默认可用余额为 **0**，不会允许付费采集。采集前按实际情况填写 `config/budget.json`：
+macOS / Linux 把 `.venv\Scripts\python.exe` 换成 `.venv/bin/python`。
 
-- `period`：当前月份，例如 `2026-09`。
-- `screenshot_available`：已经核对过的账户余额。
-- `project_limit`：本项目最多允许使用多少点。
-- `account_reserve`：留着不用的点数。
-- `per_minute`：每分钟调用上限。
+## MCP 与预算配置
 
-到新月份需重新核对；程序不会购买点数或转移下月额度。`audit` 会重新生成目录，已有人工查询映射时不要随意重跑覆盖，应先保存和迁移自己的映射。
+完整 MCP URL 可能包含凭据，不能写进仓库、日志或报告。程序按以下顺序读取：显式 `--provider-config`、环境变量、用户配置目录。
 
-### 3. 准备历史数据
+推荐使用环境变量：
 
 ```powershell
-.\.venv\Scripts\python.exe -m predictor plan --ids urolithin-a
+$env:ASVGT_SELLERSPRITE_MCP_URL = "https://example.invalid/mcp?credential=..."
+$env:ASVGT_SIF_MCP_URL = "https://example.invalid/mcp?credential=..."
 ```
 
-这只生成清单，不调用 MCP、不扣点。真正采集时，由 Codex 按 Skill 执行“预约预算 → 调用 MCP → 保存完整原始响应 → 完成登记”。每个词首次通常需要 Amazon 和 Google 两个历史接口，已有可用缓存就复用。失败尝试保守计入预算，真实扣费以供应商账单为准。
+也可以创建用户级 `providers.json`：
 
-**新克隆的仓库没有付费原始历史，因此不能直接生成真实预测报告。** 需要先采集，或将自己的 `data/raw/` 缓存按原目录结构放回来。历史不足时显示数据不足或回退基线，不会编造预测值。
+```json
+{
+  "providers": {
+    "sellersprite": {"url": "https://..."},
+    "sif": {"url": "https://..."}
+  }
+}
+```
 
-### 4. 从缓存生成报告
+复制预算模板并填写已核对的当期额度：
 
 ```powershell
-$reportDate = Get-Date -Format 'yyyy-MM-dd'
-.\.venv\Scripts\python.exe -m predictor run --as-of $reportDate
+Copy-Item config\provider_budgets.example.json config\provider_budgets.json
 ```
 
-完成后打开 `outputs/latest/report.html`。也可以执行 `scripts/rebuild_report.ps1`，默认使用本机日期。
+`config/provider_budgets.json` 和 `data/budget.sqlite` 都不会上传。SellerSprite 与 SIF 分开记账；失败的已发送请求保守计入用量。删除账本不能恢复供应商额度。
 
-`run` 只使用**已保存的缓存**，不会扣新点数或搜索新新闻。把日期改成今天，不等于旧数据自动更新到今天。只改 UI、已有 `analysis.json` 时，可以只执行：
+## 先做计划，再采集
+
+以下命令只生成计划，不联网、不扣额度：
 
 ```powershell
-.\.venv\Scripts\python.exe -m predictor report
+.\.venv\Scripts\python.exe -m predictor plan --as-of 2026-09-26 --amazon-provider sellersprite --refresh-amazon
+.\.venv\Scripts\python.exe -m predictor plan --as-of 2026-09-26 --amazon-provider sif --refresh-amazon
 ```
 
-## 新闻怎样更新？
+确认计划、账号余额和本地上限后，才运行采集脚本：
 
 ```powershell
-.\.venv\Scripts\python.exe -m predictor news-queries --ids urolithin-a
+.\.venv\Scripts\python.exe scripts\collect_sellersprite_all.py --snapshot-date 2026-09-26 --max-new-units 52
+.\.venv\Scripts\python.exe scripts\collect_sif_all.py --snapshot-date 2026-09-26 --max-new-units 11
 ```
 
-这条命令只生成检索词。由 Codex 搜索并打开原文，核验发布日期、北美相关性和来源，整理成 JSON 后导入：
+SellerSprite 每词一次调用；SIF 每批最多 5 词，52 词是 11 个批次。SIF 批次失败后不会悄悄拆成 52 次单词重试。`--max-new-units` 是本轮硬上限，仍受本地预算配置和供应商实际余额共同限制。
+
+查看账本或恢复中断状态：
 
 ```powershell
-.\.venv\Scripts\python.exe -m predictor news-import --input data/news/new_research.json
-.\.venv\Scripts\python.exe -m predictor enrich
-.\.venv\Scripts\python.exe -m predictor report
+.\.venv\Scripts\python.exe -m predictor collect-status --provider sellersprite --quota-config config\provider_budgets.json
+.\.venv\Scripts\python.exe -m predictor collect-status --provider sif --quota-config config\provider_budgets.json
+.\.venv\Scripts\python.exe -m predictor collect-recover --provider sif --quota-config config\provider_budgets.json
 ```
 
-最后两步要求已有 `outputs/latest/analysis.json`。导入格式见[新闻说明](docs/NEWS.md)。近三个月按**三个日历月**计算；品牌营销与独立报道分开标注，旧文章不伪装成新新闻，今天的新闻不塞回过去的训练中。
+## 从缓存生成双口径报告
 
-自带的 `verified_seed.json` 是有日期的首批资料，不是实时新闻流。首批重点覆盖尿石素 A / Timeline，并补充肌酸与南非醉茄；加拿大和墨西哥尚未系统检索。新闻空白不代表市场没有活动。
+先分别准备周表：
 
-## 文件放在哪里？
+```powershell
+.\.venv\Scripts\python.exe -m predictor prepare --as-of 2026-09-26 --amazon-provider sellersprite
+.\.venv\Scripts\python.exe -m predictor prepare --as-of 2026-09-26 --amazon-provider sif
+```
+
+再运行 SIF，记下命令输出的 `analysis` 路径；随后把它显式传给 SellerSprite 主报告：
+
+```powershell
+.\.venv\Scripts\python.exe -m predictor run --as-of 2026-09-26 --amazon-provider sif
+.\.venv\Scripts\python.exe -m predictor run --as-of 2026-09-26 --amazon-provider sellersprite --comparison-analysis <上一条输出的 analysis 路径>
+```
+
+完成后打开 `outputs/latest/report.html`。默认运行目录在 `outputs/runs/`；`outputs/latest-sellersprite.json` 和 `outputs/latest-sif.json` 保存已完成运行的指针。第二份分析必须显式传入，程序不会扫描目录猜测要比较哪一份。
+
+只改报告界面、已有分析结果时可以执行：
+
+```powershell
+.\.venv\Scripts\python.exe -m predictor report --analysis outputs\latest\analysis.json --output outputs\latest\report.html
+```
+
+`run`、`prepare` 和 `report` 只读本地缓存，不会调用付费 MCP，也不会自动搜索实时新闻。
+
+## 主要目录
 
 ```text
-predictor/                       数据、预算、模型、报告程序
-tests/                           自动检查，不调用付费接口
-config/budget.example.json       可分享的预算模板
-config/budget.json               自己的真实配置，不上传
-ingredient_db.json               原始候选成分知识库
-data/news/verified_seed.json     首批带日期和来源的新闻资料
-data/raw/                       原始 MCP 响应，不上传
-data/processed/                 清洗目录和周表，不上传
-data/budget.sqlite              用量账本，不上传
-outputs/latest/                 HTML、分析结果和模型，不上传
-skills/ingredient-forecast/     Codex 操作技能
-docs/                           详细方法、字段和验收记录
+config/catalog_mappings.json          人工复核的 52 个成分映射
+config/provider_budgets.example.json  双供应商预算模板
+predictor/                            对齐、预算、模型、报告程序
+scripts/                              有硬上限的采集与迁移脚本
+tests/                                不调用付费接口的自动测试
+data/raw/{provider}/                  按供应商隔离的原始缓存，不上传
+data/processed/datasets/{provider}/   周表、质量记录、来源清单，不上传
+outputs/runs/                         每次独立运行，不上传
+outputs/latest/                       SellerSprite 兼容发布目录，不上传
+docs/CONTRACT.md                      数据与输出契约
+docs/MODELING.md                      完整建模和验证规则
+docs/results/                         不含逐周历史的可分享审计摘要
 ```
 
-仓库保存代码、文档、测试和候选库，不上传本地环境、付费原始数据、个人预算配置、账本和带数据的报告。**GitHub 仓库不是完整数据备份**：换电脑时，原始数据和预算账本需要另外保留，不能把删除账本当成恢复额度的方法。
+GitHub 保存代码、测试、方法文档和脱敏审计摘要。付费原始数据、MCP 凭据、真实预算、SQLite 账本、面板、模型和带数据 HTML 都只保存在本地。Git 仓库不是这些本地数据的备份。
 
-输出里的 `analysis.json` 保存结果，`training_manifest.json` 记录输入/代码摘要和训练审计，`models/*.joblib` 保存模型。只加载自己信任的模型文件。PPC、集中度、TikTok 当前未进入需求训练；竞争指标只有已核对的月份快照，不是完整周趋势。
+## 仍需继续做的事
+
+- 在明确追加 SIF 额度后，重新采集未保留下来的 10 个批次；
+- 从现在开始定期保存两家 point-in-time 快照，做真正前瞻验证；
+- 扩充不同品类、不同生命周期的成分，减少选择偏差；
+- 取得合格的 PPC、ABA 集中度和社媒历史后，以消融回测决定是否加入；
+- 观察多个新封存周期，再判断 Ridge 或其他模型是否稳定优于简单基准。
+
+选品时仍要另行检查价格带、毛利、竞争强度、法规、供应链和评论门槛。这个系统负责把“趋势感觉”变成可重复检查的证据，不替代商业判断。

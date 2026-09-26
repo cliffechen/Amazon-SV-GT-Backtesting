@@ -1,0 +1,20 @@
+{
+  "providers": {
+    "sellersprite": {
+      "period": "YYYY-MM",
+      "available": 0,
+      "reserve": 0,
+      "project_limit": 0,
+      "per_minute": 30,
+      "source": "Replace with a verified current-period allowance"
+    },
+    "sif": {
+      "period": "YYYY-MM",
+      "available": 0,
+      "reserve": 0,
+      "project_limit": 0,
+      "per_minute": 10,
+      "source": "SIF requires its own explicitly verified credit budget"
+    }
+  }
+}

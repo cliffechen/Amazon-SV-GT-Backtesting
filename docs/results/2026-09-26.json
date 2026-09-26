@@ -1,0 +1,1639 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-26T14:07:36.433288+00:00",
+  "primary": {
+    "analysis_path": "outputs/runs/sellersprite-2026-09-26-20260926T140038-8eb93c6a/analysis.json",
+    "analysis_sha256": "f2c824888bc791d00eaef74449ea4901245f0aac54c6bfaec2302b05aa4fb2ea",
+    "analysis_schema_version": "2.0",
+    "as_of": "2026-09-19",
+    "scope": "美国站营养补充剂成分词；未来13/26周平均每周估计搜索量",
+    "provenance": {
+      "amazon_provider": "sellersprite",
+      "provider_counts": {
+        "sellersprite": 52
+      },
+      "provider_policy": "single_amazon_provider",
+      "provider_inference": "manifest",
+      "panel_sha256": "a9ab0e44ae1e204e88ead685621fec04585fb1fba9252582079c5f581f6717ee",
+      "panel_manifest_sha256": "9e97a54578effb7dee50ed5e9cd757065760018cdefdfd780998739b4c1532b8",
+      "panel_manifest_path": "data/processed/datasets/sellersprite/2026-09-26/manifest.json"
+    },
+    "source_counts": {
+      "sellersprite": 52
+    },
+    "ingredient_count": 52,
+    "history": {
+      "minimum_weeks": 11,
+      "maximum_weeks": 242,
+      "earliest_week": "2022-02-05",
+      "latest_week": "2026-09-19"
+    },
+    "backtest_counts": [
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "last13mean",
+        "n": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "n": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "n": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "n": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "n": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "seasonal",
+        "n": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "last13mean",
+        "n": 84
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "n": 77
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "n": 55
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "n": 77
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "n": 55
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "seasonal",
+        "n": 84
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "last13mean",
+        "n": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "n": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "n": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "n": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "n": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "seasonal",
+        "n": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "last13mean",
+        "n": 528
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "ridge_aba",
+        "n": 484
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "ridge_all",
+        "n": 374
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "ridge_amazon",
+        "n": 484
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "ridge_google",
+        "n": 374
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "validation",
+        "model": "seasonal",
+        "n": 528
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "last13mean",
+        "n": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "n": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "n": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "n": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "n": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "seasonal",
+        "n": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "last13mean",
+        "n": 63
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "n": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "n": 25
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "n": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "n": 25
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "seasonal",
+        "n": 63
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "last13mean",
+        "n": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "n": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "n": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "n": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "n": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "seasonal",
+        "n": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "last13mean",
+        "n": 396
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "ridge_aba",
+        "n": 220
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "ridge_all",
+        "n": 170
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "ridge_amazon",
+        "n": 220
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "ridge_google",
+        "n": 170
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "validation",
+        "model": "seasonal",
+        "n": 396
+      }
+    ],
+    "selected_models": {
+      "13": {
+        "model": "last13mean",
+        "selection_split": "validation",
+        "n_cases": 484,
+        "n_origins": 11,
+        "baseline_wape": 0.29951108219890515,
+        "selected_wape": 0.29951108219890515,
+        "reason": "conservative_baseline",
+        "sealed_test": {
+          "model_metrics": {
+            "n": 440,
+            "n_origins": 10,
+            "mae": 14141.318006993008,
+            "wape": 0.24637822736634082,
+            "rmse": 29111.43853745969,
+            "direction_accuracy": 0.2681818181818182,
+            "interval_coverage": 0.7704545454545455,
+            "n_intervals": 440
+          },
+          "baseline_metrics": {
+            "n": 440,
+            "n_origins": 10,
+            "mae": 14141.318006993008,
+            "wape": 0.24637822736634082,
+            "rmse": 29111.43853745969,
+            "direction_accuracy": 0.2681818181818182,
+            "interval_coverage": 0.7704545454545455,
+            "n_intervals": 440
+          },
+          "n_matching_cases": 440,
+          "used_for_selection": false
+        }
+      },
+      "26": {
+        "model": "seasonal",
+        "selection_split": "validation",
+        "n_cases": 220,
+        "n_origins": 5,
+        "baseline_wape": 0.2879916653234881,
+        "selected_wape": 0.26818632404965786,
+        "reason": "validation_improvement",
+        "sealed_test": {
+          "model_metrics": {
+            "n": 308,
+            "n_origins": 7,
+            "mae": 20038.543956043955,
+            "wape": 0.33942144694466503,
+            "rmse": 42681.6602190482,
+            "direction_accuracy": 0.37662337662337664,
+            "interval_coverage": 0.6266233766233766,
+            "n_intervals": 308
+          },
+          "baseline_metrics": {
+            "n": 308,
+            "n_origins": 7,
+            "mae": 14210.771103896104,
+            "wape": 0.24070813233059388,
+            "rmse": 31189.743336774198,
+            "direction_accuracy": 0.31493506493506496,
+            "interval_coverage": 0.724025974025974,
+            "n_intervals": 308
+          },
+          "n_matching_cases": 308,
+          "used_for_selection": false
+        }
+      }
+    },
+    "paired_feature_comparisons": [
+      {
+        "horizon_weeks": 13,
+        "model": "last13mean",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 11,
+        "n": 484,
+        "mae": 19246.167196439925,
+        "wape": 0.29951108219890515,
+        "rmse": 48446.48253423613,
+        "direction_accuracy": 0.2768595041322314,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "seasonal",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 11,
+        "n": 484,
+        "mae": 23759.857279084554,
+        "wape": 0.3697536498522417,
+        "rmse": 60669.01393559386,
+        "direction_accuracy": 0.5413223140495868,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 11,
+        "n": 484,
+        "mae": 34049.49241543699,
+        "wape": 0.5298821431602946,
+        "rmse": 173826.76225088543,
+        "direction_accuracy": 0.36363636363636365,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": false,
+        "coverage": 0.7727272727272727,
+        "n_origins": 11,
+        "n": 374,
+        "mae": 43972.7403422514,
+        "wape": 0.8200181727401494,
+        "rmse": 252031.23783581046,
+        "direction_accuracy": 0.3609625668449198,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 11,
+        "n": 484,
+        "mae": 32555.16893537152,
+        "wape": 0.5066273081533311,
+        "rmse": 157828.2840588403,
+        "direction_accuracy": 0.365702479338843,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": false,
+        "coverage": 0.7727272727272727,
+        "n_origins": 11,
+        "n": 374,
+        "mae": 38620.447699522534,
+        "wape": 0.7202068533022316,
+        "rmse": 193142.77326153827,
+        "direction_accuracy": 0.3502673796791444,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "google_ablation_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 38518.49513495617,
+        "wape": 0.7183056082342375,
+        "rmse": 196611.32331876547,
+        "direction_accuracy": 0.3315508021390374,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "google_ablation_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 43972.7403422514,
+        "wape": 0.8200181727401494,
+        "rmse": 252031.23783581046,
+        "direction_accuracy": 0.3609625668449198,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 484,
+        "n_origins": 11,
+        "mae": 34049.49241543699,
+        "wape": 0.5298821431602946,
+        "rmse": 173826.76225088543,
+        "direction_accuracy": 0.36363636363636365,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 484,
+        "n_origins": 11,
+        "mae": 32555.16893537152,
+        "wape": 0.5066273081533311,
+        "rmse": 157828.2840588403,
+        "direction_accuracy": 0.365702479338843,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 36620.30829692002,
+        "wape": 0.682907593684069,
+        "rmse": 178349.57344520433,
+        "direction_accuracy": 0.339572192513369,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 38620.447699522534,
+        "wape": 0.7202068533022316,
+        "rmse": 193142.77326153827,
+        "direction_accuracy": 0.3502673796791444,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 43972.7403422514,
+        "wape": 0.8200181727401494,
+        "rmse": 252031.23783581046,
+        "direction_accuracy": 0.3609625668449198,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 374,
+        "n_origins": 11,
+        "mae": 38620.447699522534,
+        "wape": 0.7202068533022316,
+        "rmse": 193142.77326153827,
+        "direction_accuracy": 0.3502673796791444,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "last13mean",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 5,
+        "n": 220,
+        "mae": 18219.274825174823,
+        "wape": 0.2879916653234881,
+        "rmse": 44764.89822304683,
+        "direction_accuracy": 0.35,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "seasonal",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 5,
+        "n": 220,
+        "mae": 16966.325524475524,
+        "wape": 0.26818632404965786,
+        "rmse": 39822.35573807237,
+        "direction_accuracy": 0.5318181818181819,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 5,
+        "n": 220,
+        "mae": 53315.08293520014,
+        "wape": 0.8427503107945921,
+        "rmse": 297314.7752984273,
+        "direction_accuracy": 0.32272727272727275,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": false,
+        "coverage": 0.7727272727272727,
+        "n_origins": 5,
+        "n": 170,
+        "mae": 63829.3599933704,
+        "wape": 1.236310762933392,
+        "rmse": 309879.1652941644,
+        "direction_accuracy": 0.3588235294117647,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": true,
+        "coverage": 1.0,
+        "n_origins": 5,
+        "n": 220,
+        "mae": 49259.790410152615,
+        "wape": 0.7786483935191264,
+        "rmse": 250688.75807144816,
+        "direction_accuracy": 0.32727272727272727,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "selection_common_cases",
+        "eligible_for_selection": false,
+        "coverage": 0.7727272727272727,
+        "n_origins": 5,
+        "n": 170,
+        "mae": 58188.401837975805,
+        "wape": 1.127051054211644,
+        "rmse": 258064.2119046576,
+        "direction_accuracy": 0.3058823529411765,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "google_ablation_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 64776.14552056068,
+        "wape": 1.2546490501663594,
+        "rmse": 337962.9697558783,
+        "direction_accuracy": 0.2823529411764706,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "google_ablation_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 63829.3599933704,
+        "wape": 1.236310762933392,
+        "rmse": 309879.1652941644,
+        "direction_accuracy": 0.3588235294117647,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_amazon",
+        "split": "validation",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 220,
+        "n_origins": 5,
+        "mae": 53315.08293520014,
+        "wape": 0.8427503107945921,
+        "rmse": 297314.7752984273,
+        "direction_accuracy": 0.32272727272727275,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 220,
+        "n_origins": 5,
+        "mae": 49259.790410152615,
+        "wape": 0.7786483935191264,
+        "rmse": 250688.75807144816,
+        "direction_accuracy": 0.32727272727272727,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_aba",
+        "split": "validation",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 59477.59808695681,
+        "wape": 1.1520214941207099,
+        "rmse": 284873.8336525474,
+        "direction_accuracy": 0.3,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 58188.401837975805,
+        "wape": 1.127051054211644,
+        "rmse": 258064.2119046576,
+        "direction_accuracy": 0.3058823529411765,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_google",
+        "split": "validation",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 63829.3599933704,
+        "wape": 1.236310762933392,
+        "rmse": 309879.1652941644,
+        "direction_accuracy": 0.3588235294117647,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "model": "ridge_all",
+        "split": "validation",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 170,
+        "n_origins": 5,
+        "mae": 58188.401837975805,
+        "wape": 1.127051054211644,
+        "rmse": 258064.2119046576,
+        "direction_accuracy": 0.3058823529411765,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12615.906020557213,
+        "wape": 0.26872953969209634,
+        "rmse": 26079.960153073866,
+        "direction_accuracy": 0.38170347003154576,
+        "interval_coverage": 0.7192429022082019,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12716.234543699416,
+        "wape": 0.27086662265689165,
+        "rmse": 24572.246871134586,
+        "direction_accuracy": 0.3659305993690852,
+        "interval_coverage": 0.7381703470031545,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 440,
+        "n_origins": 10,
+        "mae": 11741.093020882521,
+        "wape": 0.20456011839899654,
+        "rmse": 23856.00976450127,
+        "direction_accuracy": 0.4,
+        "interval_coverage": 0.7727272727272727,
+        "n_intervals": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 440,
+        "n_origins": 10,
+        "mae": 11661.824891496855,
+        "wape": 0.2031790631681455,
+        "rmse": 23558.34861988175,
+        "direction_accuracy": 0.3931818181818182,
+        "interval_coverage": 0.7704545454545455,
+        "n_intervals": 440
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12585.210890808801,
+        "wape": 0.2680757072939603,
+        "rmse": 25681.298110356598,
+        "direction_accuracy": 0.3659305993690852,
+        "interval_coverage": 0.7160883280757098,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12454.273000059191,
+        "wape": 0.265286618737652,
+        "rmse": 23758.727139713035,
+        "direction_accuracy": 0.35962145110410093,
+        "interval_coverage": 0.7350157728706624,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12716.234543699416,
+        "wape": 0.27086662265689165,
+        "rmse": 24572.246871134586,
+        "direction_accuracy": 0.3659305993690852,
+        "interval_coverage": 0.7381703470031545,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 317,
+        "n_origins": 10,
+        "mae": 12454.273000059191,
+        "wape": 0.265286618737652,
+        "rmse": 23758.727139713035,
+        "direction_accuracy": 0.35962145110410093,
+        "interval_coverage": 0.7350157728706624,
+        "n_intervals": 317
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 22835.52082512955,
+        "wape": 0.2278723992232797,
+        "rmse": 45685.659338952486,
+        "direction_accuracy": 0.43636363636363634,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 19942.48482944968,
+        "wape": 0.19900320642390143,
+        "rmse": 41224.19637153871,
+        "direction_accuracy": 0.45454545454545453,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 77,
+        "n_origins": 11,
+        "mae": 19573.572060320876,
+        "wape": 0.21270632588103033,
+        "rmse": 39802.80929389096,
+        "direction_accuracy": 0.44155844155844154,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 77,
+        "n_origins": 11,
+        "mae": 22224.210612628412,
+        "wape": 0.24151085813311157,
+        "rmse": 44466.982828614106,
+        "direction_accuracy": 0.4155844155844156,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 25843.52605228854,
+        "wape": 0.25788885355501473,
+        "rmse": 51200.17049474844,
+        "direction_accuracy": 0.41818181818181815,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 22641.399571286383,
+        "wape": 0.22593529097021128,
+        "rmse": 44981.605533555194,
+        "direction_accuracy": 0.4727272727272727,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 19942.48482944968,
+        "wape": 0.19900320642390143,
+        "rmse": 41224.19637153871,
+        "direction_accuracy": 0.45454545454545453,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 55,
+        "n_origins": 11,
+        "mae": 22641.399571286383,
+        "wape": 0.22593529097021128,
+        "rmse": 44981.605533555194,
+        "direction_accuracy": 0.4727272727272727,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 29096.19941230808,
+        "wape": 0.21990775502422882,
+        "rmse": 58575.173927685944,
+        "direction_accuracy": 0.32,
+        "interval_coverage": 0.68,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 27515.08356875342,
+        "wape": 0.2079577532160111,
+        "rmse": 56668.66881682595,
+        "direction_accuracy": 0.4,
+        "interval_coverage": 0.74,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 70,
+        "n_origins": 10,
+        "mae": 23981.903381303815,
+        "wape": 0.20068822046789583,
+        "rmse": 50570.79406339546,
+        "direction_accuracy": 0.3142857142857143,
+        "interval_coverage": 0.7285714285714285,
+        "n_intervals": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 70,
+        "n_origins": 10,
+        "mae": 26560.558232635034,
+        "wape": 0.22226722714999322,
+        "rmse": 55213.47929863173,
+        "direction_accuracy": 0.32857142857142857,
+        "interval_coverage": 0.6714285714285714,
+        "n_intervals": 70
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 32582.682425315546,
+        "wape": 0.24625843545008044,
+        "rmse": 64172.36110151889,
+        "direction_accuracy": 0.32,
+        "interval_coverage": 0.6,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 32372.34361109706,
+        "wape": 0.24466870423557416,
+        "rmse": 63768.27279232153,
+        "direction_accuracy": 0.28,
+        "interval_coverage": 0.7,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 27515.08356875342,
+        "wape": 0.2079577532160111,
+        "rmse": 56668.66881682595,
+        "direction_accuracy": 0.4,
+        "interval_coverage": 0.74,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 13,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 50,
+        "n_origins": 10,
+        "mae": 32372.34361109706,
+        "wape": 0.24466870423557416,
+        "rmse": 63768.27279232153,
+        "direction_accuracy": 0.28,
+        "interval_coverage": 0.7,
+        "n_intervals": 50
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 14624.139006979789,
+        "wape": 0.3067808235569066,
+        "rmse": 33235.49512332656,
+        "direction_accuracy": 0.4247787610619469,
+        "interval_coverage": 0.8141592920353983,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 13741.200350987276,
+        "wape": 0.2882587999419552,
+        "rmse": 29177.982126817813,
+        "direction_accuracy": 0.39823008849557523,
+        "interval_coverage": 0.8230088495575221,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 308,
+        "n_origins": 7,
+        "mae": 13336.501362793599,
+        "wape": 0.225899376704642,
+        "rmse": 29819.028737713117,
+        "direction_accuracy": 0.41233766233766234,
+        "interval_coverage": 0.8538961038961039,
+        "n_intervals": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 308,
+        "n_origins": 7,
+        "mae": 13358.722233274017,
+        "wape": 0.2262757633336994,
+        "rmse": 29726.058991967755,
+        "direction_accuracy": 0.4383116883116883,
+        "interval_coverage": 0.8474025974025974,
+        "n_intervals": 308
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 14762.088806954658,
+        "wape": 0.3096746932900651,
+        "rmse": 33231.81076942805,
+        "direction_accuracy": 0.43805309734513276,
+        "interval_coverage": 0.8053097345132744,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 13749.681499348038,
+        "wape": 0.28843671494109335,
+        "rmse": 28721.35342179843,
+        "direction_accuracy": 0.4247787610619469,
+        "interval_coverage": 0.7964601769911505,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 13741.200350987276,
+        "wape": 0.2882587999419552,
+        "rmse": 29177.982126817813,
+        "direction_accuracy": 0.39823008849557523,
+        "interval_coverage": 0.8230088495575221,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "sealed_test",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 226,
+        "n_origins": 7,
+        "mae": 13749.681499348038,
+        "wape": 0.28843671494109335,
+        "rmse": 28721.35342179843,
+        "direction_accuracy": 0.4247787610619469,
+        "interval_coverage": 0.7964601769911505,
+        "n_intervals": 226
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 25768.376786392444,
+        "wape": 0.23909332394564864,
+        "rmse": 49675.120459425845,
+        "direction_accuracy": 0.52,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 22097.436607428495,
+        "wape": 0.20503230036353415,
+        "rmse": 42365.75122388845,
+        "direction_accuracy": 0.56,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 35,
+        "n_origins": 5,
+        "mae": 21908.588021677813,
+        "wape": 0.22098837153577322,
+        "rmse": 43343.021415315176,
+        "direction_accuracy": 0.5428571428571428,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 35,
+        "n_origins": 5,
+        "mae": 23723.4494361058,
+        "wape": 0.23929458406488335,
+        "rmse": 47416.78436417376,
+        "direction_accuracy": 0.5142857142857142,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 28017.579268032834,
+        "wape": 0.259962674856653,
+        "rmse": 54571.236418026,
+        "direction_accuracy": 0.48,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 22995.571806161402,
+        "wape": 0.2133656979926403,
+        "rmse": 44774.48406313551,
+        "direction_accuracy": 0.52,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 22097.436607428495,
+        "wape": 0.20503230036353415,
+        "rmse": 42365.75122388845,
+        "direction_accuracy": 0.56,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_validation",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 25,
+        "n_origins": 5,
+        "mae": 22995.571806161402,
+        "wape": 0.2133656979926403,
+        "rmse": 44774.48406313551,
+        "direction_accuracy": 0.52,
+        "interval_coverage": null,
+        "n_intervals": 0
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "google_ablation_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 32161.933183532732,
+        "wape": 0.2348870923154636,
+        "rmse": 70434.58395639558,
+        "direction_accuracy": 0.4,
+        "interval_coverage": 0.9428571428571428,
+        "n_intervals": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "comparison": "google_ablation_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 31831.767733119108,
+        "wape": 0.2324758068312195,
+        "rmse": 69580.55041867452,
+        "direction_accuracy": 0.42857142857142855,
+        "interval_coverage": 0.9142857142857143,
+        "n_intervals": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_amazon",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 49,
+        "n_origins": 7,
+        "mae": 26757.142872488705,
+        "wape": 0.2165112163834231,
+        "rmse": 60706.65995072259,
+        "direction_accuracy": 0.46938775510204084,
+        "interval_coverage": 0.9387755102040817,
+        "n_intervals": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "comparison": "aba_ablation_matched_cases",
+        "n": 49,
+        "n_origins": 7,
+        "mae": 28445.51924243232,
+        "wape": 0.2301730794347796,
+        "rmse": 62155.51142355501,
+        "direction_accuracy": 0.4489795918367347,
+        "interval_coverage": 0.9387755102040817,
+        "n_intervals": 49
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_aba",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 34185.50259373333,
+        "wape": 0.24966575416231732,
+        "rmse": 72151.40800103468,
+        "direction_accuracy": 0.42857142857142855,
+        "interval_coverage": 0.9428571428571428,
+        "n_intervals": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "comparison": "google_ablation_with_aba_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 35843.500478319394,
+        "wape": 0.2617745506066495,
+        "rmse": 74183.29145191988,
+        "direction_accuracy": 0.37142857142857144,
+        "interval_coverage": 0.9142857142857143,
+        "n_intervals": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_google",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 31831.767733119108,
+        "wape": 0.2324758068312195,
+        "rmse": 69580.55041867452,
+        "direction_accuracy": 0.42857142857142855,
+        "interval_coverage": 0.9142857142857143,
+        "n_intervals": 35
+      },
+      {
+        "horizon_weeks": 26,
+        "split": "group_sealed_test",
+        "model": "ridge_all",
+        "comparison": "aba_ablation_with_google_matched_cases",
+        "n": 35,
+        "n_origins": 7,
+        "mae": 35843.500478319394,
+        "wape": 0.2617745506066495,
+        "rmse": 74183.29145191988,
+        "direction_accuracy": 0.37142857142857144,
+        "interval_coverage": 0.9142857142857143,
+        "n_intervals": 35
+      }
+    ]
+  },
+  "comparison": {
+    "analysis_path": "outputs/runs/sif-2026-09-26-20260926T140002-543271e0/analysis.json",
+    "analysis_sha256": "fd58d694b2e35904a5a53045f4199d73819f2e6bc6affbbe9e94678188d40f23",
+    "status": "ok",
+    "reasons": [],
+    "primary_provider": "sellersprite",
+    "secondary_provider": "sif",
+    "dual_source_ingredients": [
+      "akkermansia-muciniphila",
+      "alpha-gpc",
+      "apigenin",
+      "apple-cider-vinegar",
+      "ashwagandha",
+      "astaxanthin",
+      "bacopa-monnieri",
+      "berberine",
+      "biotin",
+      "bitter-melon-extract",
+      "caakg",
+      "chaga",
+      "cinnamon-extract",
+      "collagen-peptides",
+      "coq10",
+      "cordyceps",
+      "creatine",
+      "curcumin",
+      "elderberry",
+      "fisetin",
+      "ginkgo-biloba",
+      "glucomannan",
+      "glutathione",
+      "l-theanine",
+      "lactoferrin",
+      "lions-mane",
+      "magnesium",
+      "magnesium-l-threonate",
+      "melatonin",
+      "milk-thistle",
+      "nac",
+      "nmn",
+      "nr",
+      "omega-3",
+      "phosphatidylserine",
+      "probiotics",
+      "pterostilbene",
+      "quercetin",
+      "reishi",
+      "resveratrol",
+      "rhodiola-rosea",
+      "saffron-extract",
+      "saw-palmetto",
+      "shilajit",
+      "spermidine",
+      "tongkat-ali",
+      "urolithin-a",
+      "vitamin-b12",
+      "vitamin-c",
+      "vitamin-d3",
+      "zinc"
+    ],
+    "summary": {
+      "13": {
+        "sealed_test": {
+          "last13mean": {
+            "n_pairs": 440,
+            "n_ingredients": 44,
+            "n_origins": 10,
+            "macro_n_ingredients": 44,
+            "primary": {
+              "wape": 0.24637822736634082,
+              "macro_wape": 0.3655784390850369
+            },
+            "secondary": {
+              "wape": 0.17400825862090605,
+              "macro_wape": 0.2878612254232244
+            },
+            "pairing": {
+              "primary_only": 0,
+              "secondary_only": 0
+            }
+          }
+        },
+        "group_sealed_test": {
+          "last13mean": {
+            "n_pairs": 70,
+            "n_ingredients": 7,
+            "n_origins": 10,
+            "macro_n_ingredients": 7,
+            "primary": {
+              "wape": 0.18974492287412256,
+              "macro_wape": 0.22833476121915589
+            },
+            "secondary": {
+              "wape": 0.12672557532449305,
+              "macro_wape": 0.18532129276865725
+            },
+            "pairing": {
+              "primary_only": 0,
+              "secondary_only": 0
+            }
+          }
+        }
+      },
+      "26": {
+        "sealed_test": {
+          "last13mean": {
+            "n_pairs": 308,
+            "n_ingredients": 44,
+            "n_origins": 7,
+            "macro_n_ingredients": 44,
+            "primary": {
+              "wape": 0.24070813233059388,
+              "macro_wape": 0.4064213764679922
+            },
+            "secondary": {
+              "wape": 0.199435840231818,
+              "macro_wape": 0.3416197751656003
+            },
+            "pairing": {
+              "primary_only": 0,
+              "secondary_only": 0
+            }
+          }
+        },
+        "group_sealed_test": {
+          "last13mean": {
+            "n_pairs": 49,
+            "n_ingredients": 7,
+            "n_origins": 7,
+            "macro_n_ingredients": 7,
+            "primary": {
+              "wape": 0.19646074922651863,
+              "macro_wape": 0.18996308315585803
+            },
+            "secondary": {
+              "wape": 0.17319599795699347,
+              "macro_wape": 0.1907023551010368
+            },
+            "pairing": {
+              "primary_only": 0,
+              "secondary_only": 0
+            }
+          }
+        }
+      }
+    },
+    "audit": {
+      "invalid_rows": {
+        "primary": 0,
+        "secondary": 0
+      },
+      "duplicate_keys": {
+        "primary": 0,
+        "secondary": 0
+      },
+      "source_mismatch": [],
+      "metadata_mismatch": []
+    }
+  }
+}
